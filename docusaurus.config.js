@@ -52,40 +52,53 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'treeppl',
+            docId: 'introduction',
             position: 'left',
             label: 'Documentation',
           },
           {
-            href: 'https://github.com/treeppl/',
+            href: 'https://github.com/miking-lang/miking-dppl',
             label: 'GitHub',
             position: 'right',
+          },
+          {
+            to: 'devteam',
+            position: 'left',
+            label: 'Meet the Team',
           },
         ],
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Documentation',
-            items: [
-              {
-                label: 'TreePPL',
-                to: '/docs/treeppl',
-              },
-            ],
-          },
-          {
-            title: 'Links',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/treeppl/',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Fredrik Ronquist`,
+        // links: [
+        //   {
+        //     title: 'Documentation',
+        //     items: [
+        //       {
+        //         label: 'TreePPL',
+        //         to: '/docs/treeppl',
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: 'Links',
+        //     items: [
+        //       {
+        //         label: 'GitHub',
+        //         href: 'https://github.com/miking-lang/miking-dppl',
+        //       },
+        //       {
+        //         to: 'devteam',
+        //         label: "Meet the Developers",
+        //       },
+        //     ],
+        //   },
+        // ],
+        copyright: `Copyright © ${new Date().getFullYear()} <a href="/devteam"> TreePPL Research and Development Team</a> <br>
+        Funded by the EU Horizon 2020 Marie Skłodowska-Curie grant agreement PhyPPL No. 898120,<br>
+        and by the Swedish Foundation for Strategic Research, as well as Vetenskapsrådet (VR).<br>
+        This slide has been designed using images from <a href="https://flaticon.com">Flaticon.com</a><br>
+        Built via <a href="https://docusaurus.io">Docusaurus.io</a>`,
       },
       prism: {
         theme: lightCodeTheme,
