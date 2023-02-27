@@ -17,27 +17,6 @@ const PersonList: PersonItem[] = [
     ),
   },
   {
-    title: 'Fredrik Ronquist',
-    image: '/img/fredrik.jpg',
-    description: (
-      <>
-      <em>Principle Investigator.</em> Professor at
-        <a href="https://ronquistlab.github.io/people.html"> Naturhistoriska
-        riksmuseet</a>
-      </>
-    ),
-  },
-  {
-    title: 'Viktor Palmkvist',
-    image: '/img/vipa.jpg',
-    description: (
-      <>
-      Ph.D. Candidate at <a href="https://www.kth.se/profile/vipa"> KTH Royal
-        Institute of Technology</a>
-      </>
-    ),
-  },
-  {
     title: 'Jan Kudlicka',
     image: 'img/jan.png',
     description: (
@@ -48,12 +27,12 @@ const PersonList: PersonItem[] = [
     ),
   },
   {
-    title: 'David Broman',
-    image: 'img/david2021.jpg',
+    title: 'Viktor Palmkvist',
+    image: '/img/vipa.jpg',
     description: (
       <>
-      <em>Principle Investigator.</em> Professor at <a href="https://people.kth.se/~dbro/bio.html">
-      KTH Royal Institute of Technology</a>
+      Ph.D. Candidate at <a href="https://www.kth.se/profile/vipa"> KTH Royal
+        Institute of Technology</a>
       </>
     ),
   },
@@ -74,6 +53,27 @@ const PersonList: PersonItem[] = [
       <>
        Researcher at
         <a href="https://ronquistlab.github.io/people.html#emma"> Naturhistoriska riksmuseet</a>
+      </>
+    ),
+  },
+  {
+    title: 'Fredrik Ronquist',
+    image: '/img/fredrik.jpg',
+    description: (
+      <>
+      <em>Principle Investigator.</em> Professor at
+        <a href="https://ronquistlab.github.io/people.html"> Naturhistoriska
+        riksmuseet</a>
+      </>
+    ),
+  },
+  {
+    title: 'David Broman',
+    image: 'img/david2021.jpg',
+    description: (
+      <>
+      <em>Principle Investigator.</em> Professor at <a href="https://people.kth.se/~dbro/bio.html">
+      KTH Royal Institute of Technology</a>
       </>
     ),
   },
@@ -118,6 +118,8 @@ function shuffle(array) {
 
 // Use this if you want alphanumeric sorting
 // {PersonList.sort((a, b) => a.title.localeCompare(b.title)).map((props, idx) =>
+// Bug: does not reshuffle when you click F5
+// {shuffle(PersonList).map((props, idx) =>
 export default function Hello() {
   return (
   <Layout title="Meet the Team" description="Meet the Team">
@@ -125,7 +127,7 @@ export default function Hello() {
       <section className={styles.persons}>
         <div className="container">
           <div className="row">
-          {shuffle(PersonList).map((props, idx) =>
+          {PersonList.map((props, idx) =>
           (<Person key={idx} {...props} />))} 
           </div>
         </div>
