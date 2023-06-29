@@ -1,19 +1,56 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 id: user
 ---
 
-# Language Overview
+# TreePPL Cheat Sheet
 
-TreePPL is a universal probabilistic programming language with mostly functional semantics.
+TreePPL is a universal probabilistic programming language with mostly functional semantics, aimed at phylogenetics.
 
   - We support stochastic branching and stochastic recusion.
   - Function side-effects are only changing the weights and printing.
   - We terminate statements with `;`.
 
-Every TreePPL program is a _file_ with the extension `.tppl`.
+
+## Hello, world!
+
 A file needs to contain one more _declrations_ and may C/C++ style comments
 (`//` or `/* */`).
+
+Put this is in a file with the `.tppl` extension.
+
+```tppl
+model function hello() { // 
+  print("Hello, world");
+}
+```
+
+Every TreePPL must have exactly one `model` function. 
+
+Compilation and running
+
+```bash
+tpplc models/lang/hello.tppl models/data/empty.mc out.mc
+mi compile out.mc
+./out 1 1
+```
+
+The TreePPL is compiled to a MCore program (`out.mc`), which is compiled to an executable (`./out`).
+
+The executable takes two arguments (can be omitted):
+
+  1. The number of particles.
+  2. The number of iterations.
+
+For further compilation options run `tpplc` without arguments:
+
+```
+tpplc
+```
+
+This will print the menu.
+
+TODO - keep going
 
 ## Declarations
 
