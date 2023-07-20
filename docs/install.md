@@ -1,6 +1,5 @@
 ---
-sidebar_position: 2
-id: installation
+id: install
 --- 
 
 # Getting Started

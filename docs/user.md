@@ -1,36 +1,52 @@
 ---
-sidebar_position: 1
 id: user
 ---
 
 # TreePPL Cheat Sheet
 
-TreePPL is a universal probabilistic programming language with mostly functional semantics, aimed at phylogenetics.
-
-  - We support stochastic branching and stochastic recusion.
-  - Function side-effects are only changing the weights and printing.
-  - We terminate statements with `;`.
-
-
+TreePPL is a [universal](/docs/glossary/universal) probabilistic programming language with mostly [functional](/docs/glossary/functional) semantics, aimed at phylogenetics.
+  
 ## Hello, world!
 
-A file needs to contain one more _declrations_ and may C/C++ style comments
-(`//` or `/* */`).
+| Feature | Implementation |
+|----------|----------|
+| Single-line comment | `// This is a single line comment`  |
+| Multi-line or intervening comment | `/* This is a multiline/intervening` |
+|                     | `   comment */`                     |
+| Printing with a new line   | `printLn("Hello, world");` |
+|                            |`// Terminate statements with semi-colon ;` |   
+| Every program needs to have a model function   | `model function hello() { /* put your code here */ }` |
+| Compiling TreePPL code to binary | `tpplc hello.tppl input.mc output.mc && mi compile output.mc` |
+| Running compiled programs | `./output [number of particles] [number of sweeps]`
 
-Put this is in a file with the `.tppl` extension.
+Let's put everything together and write our first program.  
 
-```tppl
-model function hello() { // 
-  print("Hello, world");
+```js
+/*
+ * File: hello.tppl
+ * Description: Hello, world! Our first program.
+ * Compilation:
+ *   tpplc models/lang/hello.tppl models/data/standard.mc out.mc && mi compile out.mc
+ * Execution: ./out 1 1
+ */
+
+/*
+ * Model function
+ * Parameters: none
+ * Returns: nothing
+ * Side-effect: prints "Hello, world!"
+ */
+model function hello() { 
+  printLn("Hello, world!")
 }
 ```
 
-Every TreePPL must have exactly one `model` function. 
+For convenience this program can be found under `models/lang/hello.tppl`.  Since our program has no input, we only need to include `models/data/empty.mc`.  `empty.mc` does not initalize data but does include the standard library.
 
-Compilation and running
+Compile and run:
 
 ```bash
-tpplc models/lang/hello.tppl models/data/empty.mc out.mc
+tpplc models/lang/hello.tppl models/data/empty.mc out.mc && mi compile out.mc
 mi compile out.mc
 ./out 1 1
 ```
