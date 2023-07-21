@@ -6,20 +6,48 @@ id: user
 
 TreePPL is a [universal](/docs/glossary/universal) probabilistic programming language with mostly [functional](/docs/glossary/functional) semantics, aimed at phylogenetics.
   
-## Hello, world!
+## Basic features
 
 | Feature | Implementation |
 |----------|----------|
 | Single-line comment | `// This is a single line comment`  |
 | Multi-line or intervening comment | `/* This is a multiline/intervening` |
 |                     | `   comment */`                     |
-| Printing with a new line   | `printLn("Hello, world");` |
+| Print a string followed by a new line   | `printLn("Hello, world");` |
 |                            |`// Terminate statements with semi-colon ;` |   
 | Every program needs to have a model function   | `model function hello() { /* put your code here */ }` |
 | Compiling TreePPL code to binary | `tpplc hello.tppl input.mc output.mc && mi compile output.mc` |
-| Running compiled programs | `./output [number of particles] [number of sweeps]`
+| Running compiled programs | `./output [number of particles] [number of sweeps]` |
 
-Let's put everything together and write our first program.  
+## Passing data to the model function
+
+
+| Feature | Implementation |
+|----------|----------|
+| Passing a single integer value | `model function intTest(myInt: Int)`  |
+| Multi-line or intervening comment | `/* This is a multiline/intervening` |
+|                     | `   comment */`                     |
+| Print a string followed by a new line   | `printLn("Hello, world");` |
+|                            |`// Terminate statements with semi-colon ;` |   
+| Every program needs to have a model function   | `model function hello() { /* put your code here */ }` |
+| Compiling TreePPL code to binary | `tpplc hello.tppl input.mc output.mc && mi compile output.mc` |
+| Running compiled programs | `./output [number of particles] [number of sweeps]` |
+
+For further compilation options run `tpplc` without arguments:
+
+```
+tpplc
+```
+
+This will print the menu.
+
+TODO - keep going
+
+## Examples
+
+### Hello world
+
+Let's write our first program.  
 
 ```js
 /*
@@ -49,24 +77,15 @@ Compile and run:
 tpplc models/lang/hello.tppl models/data/empty.mc out.mc && mi compile out.mc
 mi compile out.mc
 ./out 1 1
+$ ./out 1 1
+Hello, world!
+0.
+() 0.
 ```
 
-The TreePPL is compiled to a MCore program (`out.mc`), which is compiled to an executable (`./out`).
+The program displays the string "Hello, world!", followed by the normalizing constant and by samples from the described distributions, which are both 0, as the model does nothing but print "Hello, world!".
 
-The executable takes two arguments (can be omitted):
-
-  1. The number of particles.
-  2. The number of iterations.
-
-For further compilation options run `tpplc` without arguments:
-
-```
-tpplc
-```
-
-This will print the menu.
-
-TODO - keep going
+### Fair coin
 
 ## Declarations
 
