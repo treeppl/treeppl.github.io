@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'TreePPL',
-  tagline: 'A Probabilistic Programming Language for Statistical Phylogenetics',
+  tagline: 'A Universal Probabilistic Programming Language Inspired from Phylogenetics',
   url: 'http://treeppl.org/',
   baseUrl: '/',
   projectName: 'treeppl.github.io',
@@ -52,7 +52,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'user',
+            docId: 'about',
             position: 'left',
             label: 'Documentation',
           },

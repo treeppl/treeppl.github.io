@@ -15,10 +15,10 @@ A universal PPL has the following features in addition to a pure PGM:
 Examples of universal PPLs are:
 
   - TreePPL
-  - Birch
-  - WebPPL
+  - [Birch](https://birch-lang.org).
+  - pWebPPL](http://webppl.org/) 
 
 Examples of PPLs which are constrained to a pure PGM arE:
 
-  - STAN
-  - RevBayes
+  - [STAN](https://mc-stan.org/)
+  - [RevBayes](https://revbayes.github.io/)

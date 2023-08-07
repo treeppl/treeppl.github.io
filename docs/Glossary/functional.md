@@ -4,6 +4,4 @@ id: functional
 
 # Functional programming languages
 
-TODO
-
-  - Function side-effects are only changing the weights and printing.
+Functional programming languages focus on expressing computation as function transformations rather than as instructions.  Thus they are very well adapted to scientific computing.
