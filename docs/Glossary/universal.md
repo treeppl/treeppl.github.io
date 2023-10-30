@@ -16,7 +16,7 @@ Examples of universal PPLs are:
 
   - TreePPL
   - [Birch](https://birch-lang.org).
-  - pWebPPL](http://webppl.org/) 
+  - [WebPPL](http://webppl.org/) 
 
 Examples of PPLs which are constrained to a pure PGM arE:
 
