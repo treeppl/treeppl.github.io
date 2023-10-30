@@ -6,75 +6,66 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const PersonList: PersonItem[] = [
   {
-    title: 'Viktor Senderov',
+    title: (
+      <a href="https://www.phyloeco.bio.ens.psl.eu/people.html">Viktor Senderov</a>
+      ),
     image: '/img/viktor.png',
     description: (
-      <>
-      <em>Lead Author.</em> Postdoctoral Fellow at
-        <a href="https://www.phyloeco.bio.ens.psl.eu/people.html"> L'École 
-        normale supérieure</a>
-      </>
+      <>Postdoctoral Researcher at L'École normale supérieure</>
     ),
   },
   {
-    title: 'Jan Kudlicka',
+    title: (<a href="https://jan.kudlicka.eu">Jan Kudlicka</a>),
     image: 'img/jan.png',
     description: (
-      <>
-      Associate Professor of Data Science at
-        <a hreff="https://jan.kudlicka.eu"> BI Norwegian Business School</a>
-      </>
+      <>Associate Professor of Data Science at BI Norwegian Business School</>
     ),
   },
   {
-    title: 'Viktor Palmkvist',
-    image: '/img/vipa.jpg',
-    description: (
-      <>
-      Ph.D. Candidate at <a href="https://www.kth.se/profile/vipa"> KTH Royal
-        Institute of Technology</a>
-      </>
-    ),
-  },
-  {
-    title: 'Daniel Lundén',
+    title: (<a href="https://dlunde.github.io/">Daniel Lundén</a>),
     image: 'img/dlunde.png',
     description: (
-      <>
-      Ph.D. Candidate at <a href="https://www.kth.se/profile/dlunde"> KTH Royal
-        Institute of Technology</a>  
-      </>
+      <>Senior Member of Technical Staff at Oracle</>
     ),
   },
   {
-    title: 'Emma Granqvist',
+    title: (<a href="https://www.kth.se/profile/vipa">Viktor Palmkvist</a>),
+    image: '/img/vipa.jpg',
+    description: (
+      <>Ph.D. Candidate at  KTH Royal Institute of Technology</>
+    ),
+  },
+  {
+    title: (<a href="https://marianapbraga.com">Mariana P. Braga</a>),
+    image: 'img/mariana.jpg',
+    description: (
+      <>Postdoctoral Researcher at the Swedish University of Agricultural Sciences</>
+    ),
+  },
+  {
+    title: (<a href="https://ronquistlab.github.io/people.html#emma">Emma Granqvist</a>),
     image: 'img/emma.jpeg',
     description: (
-      <>
-       Researcher at
-        <a href="https://ronquistlab.github.io/people.html#emma"> Naturhistoriska riksmuseet</a>
-      </>
+      <>Postdoctoral Researcher at Department of Bioinformatics and Genetics,
+        Swedish Museum of Natural History</>
     ),
   },
   {
-    title: 'Fredrik Ronquist',
+    title: (<a href="https://ronquistlab.github.io/people.html">Fredrik Ronquist</a>),
     image: '/img/fredrik.jpg',
     description: (
-      <>
-      <em>Principle Investigator.</em> Professor at
-        <a href="https://ronquistlab.github.io/people.html"> Naturhistoriska
-        riksmuseet</a>
-      </>
+      <><em>PI together with Broman (eq. contribution) </em> 
+      Department of Bioinformatics and Genetics,
+      Swedish Museum of Natural History</>
     ),
   },
   {
-    title: 'David Broman',
+    title: (<a href="https://people.kth.se/~dbro/bio.html">David Broman</a>),
     image: 'img/david2021.jpg',
     description: (
-      <>
-      <em>Principle Investigator.</em> Professor at <a href="https://people.kth.se/~dbro/bio.html">
-      KTH Royal Institute of Technology</a>
-      </>
+      <><em>PI together with Ronquist (eq. contribution) </em> 
+      EECS and Digital Futures, KTH Royal Institute of Technology and
+      Computer Science Department, Stanford University</>
     ),
   },
 ];
