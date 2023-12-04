@@ -4,6 +4,8 @@
 
 This Style Guide is **under construction** .
 
+:::
+
 The goal of this guide is to help users write code that easy to understand and compare to other TreePPL code. 
 
 
