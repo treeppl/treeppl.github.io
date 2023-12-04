@@ -11,12 +11,6 @@ The goal of this guide is to help users write code that easy to understand and c
 We advise snake_case over CamelCase.
 
 
-## Comments
-Single-line comments are inserted after a double forward slash:  `// `. 
-
-Multi-line or intervening comments are inserted with a forward slash and asterisk at the start and by an asterisk and forward slash at the end: `/* ... */ `
-
-
 ## Statements
 There should only be one statement per line, terminated by a semi-colon. 
 
@@ -41,6 +35,11 @@ model function hello() : () {
   printLn("Hello, world!");
 }
 ```
+
+## Comments
+Single-line comments are inserted after a double forward slash:  `// `. 
+
+Multi-line or intervening comments are inserted with a forward slash and asterisk at the start and by an asterisk and forward slash at the end: `/* ... */ `
 
 
 
