@@ -1,10 +1,6 @@
----
-id: about
----
-
 # About TreePPL
 
-TreePPL is a [universal](/docs/glossary/universal) probabilistic programming language (PPL) with immutable semantics, aimed at assisting phylogneticists in their efforts.
+TreePPL is a [universal](universal) probabilistic programming language (PPL) with immutable semantics, aimed at assisting phylogneticists in their efforts.
 
 The ultimate vision of probabilistic programming is to provide expressive model description languages, while at the same time supporting the automated generation of efficient inference algorithms. This allows empiricists to easily and succinctly describe any model they might be interested in, relying on the automated machinery to provide efficient inference algorithms for that model.
 

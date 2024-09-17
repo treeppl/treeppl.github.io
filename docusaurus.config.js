@@ -52,7 +52,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'about',
+            docId: 'docs',
             position: 'left',
             label: 'Documentation',
           },

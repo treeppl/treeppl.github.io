@@ -2,7 +2,7 @@
 id: interface
 ---
 
-# Interfaces to TreePPL
+# Using the Python and R Environments Tutorial
 
 Currently, there are two interfaces to TreePPL, and R and a Python package. 
 
