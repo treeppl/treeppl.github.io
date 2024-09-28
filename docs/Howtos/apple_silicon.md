@@ -1,26 +1,42 @@
 # Mac (Apple Silicone) Installation Guide
 
-### Step-by-step installation guide
+### 1. Check Command Line Tools
 
-### 1. Note about command line tools
+Before proceeding, ensure that your Command Line Tools are up-to-date. Run the following in your terminal:
+```console
+xcode-select --install
+```
+This will prompt you to install or update the necessary development tools.
 
-Before proceeding, check that your command line tools are up-to-date. 
-
-### 2. Dependencies
-It is most likely necessary to perform the following steps:
+### 2. Install Dependencies via Homebrew
+To install the required dependencies, use Homebrew. If Homebrew is not installed, you can install it by running:
+```console
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+After installing Homebrew, use the following commands to install the necessary packages:
 
 ```console
-# Install gcc and openblas
-brew install gcc openblas
+brew install python@3.11  # This installs Python 3.11 and pip3
+brew install make gcc openblas
+```
 
-# Make sure that you have gcc as your cc compiler (change version from 12 to
-# your GCC version if it is different)
+#### Set GCC as the Default cc Compiler
+If GCC is not set as your default cc compiler, create a symlink to ensure it's used:
+
+```console
+# Create a symbolic link to use GCC as the default cc compiler
+# Note: Adjust the GCC version if different (e.g., gcc-12)
 cd $HOMEBREW_PREFIX/bin && ln -s gcc-12 cc
 ```
 
-Now verify that your cc compiler points to the correct location by running `which cc`. You might need to open a new terminal window for this.
+Verify: After this, check that cc points to the correct compiler:
+```console
+which cc
+```
+Open a new terminal window if necessary for the changes to take effect.
 
-Once `cc` points to the correct location, run the following commands to install the remaining dependencies:
+###  3. Set Up Environment for Compilation
+Now, set the required environment variables for the compilation process:
 
 ```console
 export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/openblas/lib/pkgconfig:${PKG_CONFIG_PATH}"
@@ -28,84 +44,111 @@ export OWL_CFLAGS="-g -O3 -Ofast -funroll-loops -ffast-math -DSFMT_MEXP=19937 -f
 export OWL_AEOS_CFLAGS="-g -O3 -Ofast -funroll-loops -ffast-math -DSFMT_MEXP=19937 -fno-strict-aliasing"
 export EIGENCPP_OPTFLAGS="-Ofast -funroll-loops -ffast-math"
 export EIGEN_FLAGS="-O3 -Ofast -funroll-loops -ffast-math"
-
-
-# If opened a new terminal window, make sure to run `eval $(opam env)` first
-opam install pyml toml lwt owl ocamlformat.0.24.1
 ```
 
-You can now remove the `cc` symlink created earlier.
+If you want, you can now remove the `cc` symlink created earlier.
 
-### 3. Opam package manager 
-For this install procedure, `opam` is required and `make` is highly recommended.
+### 4. Install Dependencies via Opam
+You need to install Opam, the OCaml package manager. If Opam is not installed, follow the installation instructions here:
+[Opam Installation Guide](https://opam.ocaml.org/doc/Install.html)
 
-See the Opam installation guide for how to install Opam on Mac, 
-[link here](https://opam.ocaml.org/doc/Install.html)
-
-Create the Opam 4.14.0 switch named treeppl:
+Once `opam` is installed, create a switch for OCaml 5.0.0:
 
 ```console
 opam update
-opam switch create treeppl 4.14.0
+opam switch create 5.0.0
 eval $(opam env)
 ```
 
-Install required dependencies:
+Next, install the required OCaml packages:
 
 ```console
 opam install dune linenoise
+opam install pyml toml lwt owl ocamlformat.0.24.1 dune linenoise
 ```
 
 
-### 4. Install Miking
-Clone the Miking git repository to a suitable location on your system and enter the directory:
+### 5. Install Miking and TreePPL
+The following script installs **Miking** and **TreePPL** compilers along with the required packages:
 
 ```console
-git clone https://github.com/miking-lang/miking.git
+# Initialize environment
+eval $(opam env)
+
+# Clone and install Miking
+git clone https://github.com/treeppl/miking.git
 cd miking
-```
-
-Assuming that you have downloaded the repository and are currently located in that directory, then you can install Miking on your system with `make`:
-```console
 make install
-```
+cd ..
 
-This will install the mi binary under `$HOME/.local/bin`, as well as the standard library under `$HOME/.local/lib`. If not already, make sure that `$HOME/.local/bin` is on your shell's PATH by running the following command directly or adding it to the appropriate .rc-file (e.g. `.bashrc` or `.zshrc`):
-
-```console
-export PATH="$HOME/.local/bin:$PATH"
-```
-
-### 5. Install Miking-DPPL
-Clone the Miking-DPPL git repository to a suitable location on your system and enter the directory:
-
-```console
-git clone https://github.com/miking-lang/miking-dppl
+# Clone and install Miking-DPPL
+git clone https://github.com/treeppl/miking-dppl.git
 cd miking-dppl
 make install
-```
+cd ..
 
-### 6. Install TreePPL
-Clone the TreePPL git repository to a suitable location on your system and enter the directory:
-
-```console
-git clone https://github.com/treeppl/treeppl
+# Clone and install TreePPL
+git clone https://github.com/treeppl/treeppl.git
 cd treeppl
 make install
+cd ..
+
+# Clone and install TreePPL-Python
+git clone https://github.com/vsenderov/treeppl-python.git
+cd treeppl-python
+pip install -e .
+pip install matplotlib seaborn
 ```
 
-### 7. Testing you installation
+This script will create four directories (`miking`, `miking-dppl`, `treeppl` and `treeppl-python`) where you execute the script and instruct you how to set up the environment variables. If you don’t plan to work on TreePPL development, you can safely remove the `miking` and `miking-dppl` directories after the installation:
 
-To make sure your startup configurations worked, log out of your session and log back on.  Typing `tpplc` should give you manual page for the `tpplc` compiler.  You can also run a simple `coin.py` example:
-
+```console
+rm -rf miking/ miking-dppl/
 ```
+
+### 6. Customize Your Environment
+To ensure your environment is set up correctly every time you open a terminal, add the necessary environment variables to your `~/.zshrc` file:
+
+Edit your `~/.zshrc` file:
+```console
+nano ~/.zshrc
+```
+Then, add the following lines at the end of the file:
+```console
+## Customizations for TreePPL
+eval $(opam env)
+export PATH="$HOME/.local/bin:$PATH"
+export MCORE_LIBS="coreppl=$HOME/.local/src/coreppl/"
+export MCORE_LIBS="$MCORE_LIBS:treeppl=$HOME/.local/src/treeppl/"
+```
+Save and close the file (in `nano`, press `CTRL + X`, then `Y`, and `ENTER`).
+
+To apply the changes, either close and reopen the terminal or run:
+```console
+source ~/.zshrc
+```
+
+### 7. Test Your Installation
+
+To verify that the installation worked correctly, restart your terminal session and run:
+```console
 tpplc
+```
+
+You should see the manual page for the tpplc compiler.
+
+To further verify the setup, you can run the example `coin.py` located in the `treeppl-python` directory:
+
+```console
 cd treeppl-python/examples
 python3 coin.py
 ```
 
-If you are running a graphics terminal, you will see the inferred coin distribution.  Otherwise, you can open the generated image file `coin_outcomes_plot.png`.  Don’t forget to delete it after that.
-
+If you are using a graphical terminal, a plot showing the inferred coin distribution should appear. If not, you can open the generated image file `coin_outcomes_plot.png`:
+```console
+open coin_outcomes_plot.png
 ```
+Once you have verified the output, you can delete the image:
+```console
 rm coin_outcomes_plot.png
 ```
