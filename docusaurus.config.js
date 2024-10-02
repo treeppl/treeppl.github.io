@@ -57,7 +57,7 @@ const config = {
             label: 'Documentation',
           },
           {
-            href: 'https://github.com/miking-lang/miking-dppl',
+            href: 'https://github.com/treeppl',
             label: 'GitHub',
             position: 'right',
           },
@@ -85,7 +85,7 @@ const config = {
         //     items: [
         //       {
         //         label: 'GitHub',
-        //         href: 'https://github.com/miking-lang/miking-dppl',
+        //         href: 'https://github.com/treeppl',
         //       },
         //       {
         //         to: 'devteam',
