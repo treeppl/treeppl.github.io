@@ -75,13 +75,13 @@ The following script installs **Miking** and **TreePPL** compilers along with th
 eval $(opam env)
 
 # Clone and install Miking
-git clone https://github.com/treeppl/miking.git
+git clone https://github.com/vsenderov/miking.git
 cd miking
 make install
 cd ..
 
 # Clone and install Miking-DPPL
-git clone https://github.com/treeppl/miking-dppl.git
+git clone https://github.com/vsenderov/miking-dppl.git
 cd miking-dppl
 make install
 cd ..
