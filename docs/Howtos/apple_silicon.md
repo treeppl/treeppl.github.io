@@ -63,7 +63,6 @@ eval $(opam env)
 Next, install the required OCaml packages:
 
 ```console
-opam install dune linenoise
 opam install pyml toml lwt owl ocamlformat.0.24.1 dune linenoise
 ```
 
