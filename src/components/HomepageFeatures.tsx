@@ -20,7 +20,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Supports natively the <a href="https://github.com/kudlicka/nexus2phyjson/blob/master/doc/phyjson_format_description.md">PhyJSON </a>
-        format for evolutoinary trees.
+        format for evolutionary trees.
       </>
     ),
   },
