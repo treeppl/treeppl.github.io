@@ -58,10 +58,11 @@ const PersonList: PersonItem[] = [
     ),
   },
   {
-    title: (<a href="https://ronquistlab.github.io/people.html#caylak">Gizem Çaylak</a>),
-    image: 'img/caylak.jpeg',
+    title: (<a href="https://ronquistlab.github.io/people.html#tim">Thimothée Virgoulay</a>),
+    image: 'img/tim.jpeg',
     description: (
-      <>Ph.D. Candidate at KTH Royal Institute of Technology</>
+      <>Postdoctoral Researcher at Department of Bioinformatics and Genetics,
+        Swedish Museum of Natural History</>
     ),
   },
   {
