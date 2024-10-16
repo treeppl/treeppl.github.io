@@ -51,6 +51,13 @@ const PersonList: PersonItem[] = [
     ),
   },
   {
+    title: (<a href="https://www.kth.se/profile/caylak">Gizem Çaylak</a>),
+    image: 'img/caylak.jpeg',
+    description: (
+      <>Ph.D. Candidate at KTH Royal Institute of Technology</>
+    ),
+  },
+  {
     title: (<a href="https://ronquistlab.github.io/people.html#caylak">Gizem Çaylak</a>),
     image: 'img/caylak.jpeg',
     description: (
