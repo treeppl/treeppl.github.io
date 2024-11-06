@@ -1,4 +1,4 @@
-# Mac (Apple Silicon) Installation Guide
+# Mac (Apple silicon) Installation Guide
 
 ### 1. Check Command Line Tools
 
