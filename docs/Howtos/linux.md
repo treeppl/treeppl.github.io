@@ -87,7 +87,7 @@ make install
 git clone https://github.com/treeppl/treeppl.git
 (cd treeppl && make install)
 
-git clone https://github.com/vsenderov/treeppl-python.git
+git clone https://github.com/treeppl/treeppl-python.git
 (cd treeppl-python && pip install -e .)
 
 pip install matplotlib seaborn
