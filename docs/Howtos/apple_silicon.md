@@ -76,15 +76,15 @@ eval $(opam env)
 
 # Clone and install Miking
 git clone -n https://github.com/treeppl/miking.git
-git checkout 24505bd
 cd miking
+git checkout 24505bd
 make install
 cd ..
 
 # Clone and install Miking-DPPL
 git clone -n https://github.com/treeppl/miking-dppl.git
-git checkout 680ea76
 cd miking-dppl
+git checkout 680ea76
 make install
 cd ..
 
