@@ -32,7 +32,8 @@ const PersonList: PersonItem[] = [
     title: (<a href="https://www.kth.se/profile/vipa">Viktor Palmkvist</a>),
     image: '/img/vipa.jpg',
     description: (
-      <>Ph.D. Candidate at  KTH Royal Institute of Technology</>
+      <>Postdoctoral Researcher at Department of Bioinformatics and Genetics,
+        Swedish Museum of Natural History</>
     ),
   },
   {
