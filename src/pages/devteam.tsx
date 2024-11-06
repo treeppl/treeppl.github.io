@@ -80,8 +80,7 @@ const PersonList: PersonItem[] = [
     image: 'img/david2021.jpg',
     description: (
       <><em>PI together with Ronquist (eq. contribution) </em> 
-      EECS and Digital Futures, KTH Royal Institute of Technology and
-      Computer Science Department</>
+      EECS and Digital Futures, KTH Royal Institute of Technology </>
     ),
   },
 ];
