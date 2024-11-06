@@ -79,6 +79,8 @@ git clone -n https://github.com/treeppl/miking.git
 cd miking
 git checkout 24505bd
 make install
+
+# Go back to the original directory
 cd ..
 
 # Clone and install Miking-DPPL
@@ -86,12 +88,16 @@ git clone -n https://github.com/treeppl/miking-dppl.git
 cd miking-dppl
 git checkout 680ea76
 make install
+
+# Go back to the original directory
 cd ..
 
 # Clone and install TreePPL
 git clone https://github.com/treeppl/treeppl.git
 cd treeppl
 make install
+
+# Go back to the original directory
 cd ..
 
 # Clone and install TreePPL-Python
