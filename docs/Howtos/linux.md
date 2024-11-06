@@ -74,11 +74,15 @@ The following script takes care of the **Miking and TreePPL compilers and packag
 
 ```bash
 eval $(opam env)
-git clone https://github.com/treeppl/miking.git
-(cd miking && make install)
+git clone -n https://github.com/treeppl/miking.git
+cd miking
+git checkout 24505bd
+make install
 
-git clone https://github.com/treeppl/miking-dppl.git
-(cd miking-dppl && make install)
+git clone -n https://github.com/treeppl/miking-dppl.git
+cd miking-dppl
+git checkout 680ea76
+make install
 
 git clone https://github.com/treeppl/treeppl.git
 (cd treeppl && make install)
