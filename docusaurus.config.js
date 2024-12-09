@@ -1,10 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
-/** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'TreePPL',
   tagline: 'A Universal Probabilistic Programming Language Inspired from Phylogenetics',
@@ -22,26 +22,27 @@ const config = {
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      '@docusaurus/preset-classic',
+      {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: ['./src/css/custom.css'],
         },
-      }),
+      },
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      hideableSidebar: true,
+  themeConfig: {
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       navbar: {
         title: 'TreePPL',
         // TODO Add TreePPL logo
@@ -52,7 +53,13 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'docs',
+            docId: 'Howtos/index',
+            position: 'left',
+            label: 'Installation',
+          },
+          {
+            type: 'doc',
+            docId: 'index',
             position: 'left',
             label: 'Documentation',
           },
@@ -103,8 +110,9 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['bash']
       },
-    }),
+    },
 };
 
 module.exports = config;

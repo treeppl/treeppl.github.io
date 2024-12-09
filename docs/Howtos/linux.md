@@ -121,7 +121,7 @@ export MCORE_LIBS="$MCORE_LIBS:treeppl=$HOME/.local/src/treeppl/"
 
 To make sure your startup configurations worked, log out of your session and log back on.  Typing `tpplc` should give you manual page for the `tpplc` compiler.  You can also run a simple `coin.py` example:
 
-```
+```bash
 tpplc
 cd treeppl-python/examples
 python3 coin.py
@@ -129,6 +129,6 @@ python3 coin.py
 
 If you are running a graphics terminal, you will see the inferred coin distribution.  Otherwise, you can open the generated image file `coin_outcomes_plot.png`.  Don’t forget to delete it after that.
 
-```
+```bash
 rm coin_outcomes_plot.png
 ```
