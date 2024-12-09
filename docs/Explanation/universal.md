@@ -1,7 +1,3 @@
----
-id: universal
----
-
 # Universal probabilistic programming languages
 
 A universal PPL is a PPL that does not require that the probabilistic graphical model (PGM) of the model be known statically at compile time.

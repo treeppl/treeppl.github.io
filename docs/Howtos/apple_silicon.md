@@ -3,19 +3,19 @@
 ### 1. Check Command Line Tools
 
 Before proceeding, ensure that your Command Line Tools are up-to-date. Run the following in your terminal:
-```console
+```bash
 xcode-select --install
 ```
 This will prompt you to install or update the necessary development tools.
 
 ### 2. Install Dependencies via Homebrew
 To install the required dependencies, use Homebrew. If Homebrew is not installed, you can install it by running:
-```console
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 After installing Homebrew, use the following commands to install the necessary packages:
 
-```console
+```bash
 brew install python@3.11  # This installs Python 3.11 and pip3
 brew install make gcc openblas
 ```
@@ -23,14 +23,14 @@ brew install make gcc openblas
 #### Set GCC as the Default cc Compiler
 If GCC is not set as your default cc compiler, create a symlink to ensure it's used:
 
-```console
+```bash
 # Create a symbolic link to use GCC as the default cc compiler
 # Note: Adjust the GCC version if different (e.g., gcc-12)
 cd $HOMEBREW_PREFIX/bin && ln -s gcc-12 cc
 ```
 
 Verify: After this, check that cc points to the correct compiler:
-```console
+```bash
 which cc
 ```
 Open a new terminal window if necessary for the changes to take effect.
@@ -38,7 +38,7 @@ Open a new terminal window if necessary for the changes to take effect.
 ###  3. Set Up Environment for Compilation
 Now, set the required environment variables for the compilation process:
 
-```console
+```bash
 export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/openblas/lib/pkgconfig:${PKG_CONFIG_PATH}"
 export OWL_CFLAGS="-g -O3 -Ofast -funroll-loops -ffast-math -DSFMT_MEXP=19937 -fno-strict-aliasing -Wno-tautological-constant-out-of-range-compare"
 export OWL_AEOS_CFLAGS="-g -O3 -Ofast -funroll-loops -ffast-math -DSFMT_MEXP=19937 -fno-strict-aliasing"
@@ -54,7 +54,7 @@ You need to install Opam, the OCaml package manager. If Opam is not installed, f
 
 Once `opam` is installed, create a switch for OCaml 5.0.0:
 
-```console
+```bash
 opam update
 opam switch create 5.0.0
 eval $(opam env)
@@ -62,7 +62,7 @@ eval $(opam env)
 
 Next, install the required OCaml packages:
 
-```console
+```bash
 opam install pyml toml lwt owl ocamlformat.0.24.1 dune linenoise
 ```
 
@@ -70,7 +70,7 @@ opam install pyml toml lwt owl ocamlformat.0.24.1 dune linenoise
 ### 5. Install Miking and TreePPL
 The following script installs **Miking** and **TreePPL** compilers along with the required packages:
 
-```console
+```bash
 # Initialize environment
 eval $(opam env)
 
@@ -109,7 +109,7 @@ pip install matplotlib seaborn
 
 This script will create four directories (`miking`, `miking-dppl`, `treeppl` and `treeppl-python`) where you execute the script and instruct you how to set up the environment variables. If you don’t plan to work on TreePPL development, you can safely remove the `miking` and `miking-dppl` directories after the installation:
 
-```console
+```bash
 rm -rf miking/ miking-dppl/
 ```
 
@@ -117,11 +117,11 @@ rm -rf miking/ miking-dppl/
 To ensure your environment is set up correctly every time you open a terminal, add the necessary environment variables to your `~/.zshrc` file:
 
 Edit your `~/.zshrc` file:
-```console
+```bash
 nano ~/.zshrc
 ```
 Then, add the following lines at the end of the file:
-```console
+```bash
 ## Customizations for TreePPL
 eval $(opam env)
 export PATH="$HOME/.local/bin:$PATH"
@@ -131,14 +131,14 @@ export MCORE_LIBS="$MCORE_LIBS:treeppl=$HOME/.local/src/treeppl/"
 Save and close the file (in `nano`, press `CTRL + X`, then `Y`, and `ENTER`).
 
 To apply the changes, either close and reopen the terminal or run:
-```console
+```bash
 source ~/.zshrc
 ```
 
 ### 7. Test Your Installation
 
 To verify that the installation worked correctly, restart your terminal session and run:
-```console
+```bash
 tpplc
 ```
 
@@ -146,16 +146,16 @@ You should see the manual page for the tpplc compiler.
 
 To further verify the setup, you can run the example `coin.py` located in the `treeppl-python` directory:
 
-```console
+```bash
 cd treeppl-python/examples
 python3 coin.py
 ```
 
 If you are using a graphical terminal, a plot showing the inferred coin distribution should appear. If not, you can open the generated image file `coin_outcomes_plot.png`:
-```console
+```bash
 open coin_outcomes_plot.png
 ```
 Once you have verified the output, you can delete the image:
-```console
+```bash
 rm coin_outcomes_plot.png
 ```

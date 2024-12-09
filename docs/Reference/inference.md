@@ -8,7 +8,7 @@ Please find below a reference list of the supported strategies with an explanati
 
 ## Importance Sampling
 
-```
+```bash
 tpplc -m is-lw
 ```
 
@@ -26,7 +26,7 @@ Both inference methods have a resampling option.
 
 ### Bootstrap particle filter (BPF)
 
-```
+```bash
 tpplc -m smc-bpf
 ```
 
@@ -37,7 +37,7 @@ This inference is affected by the resample placement method.
 
 ### Alive particle filter (APF)
 
-```
+```bash
 tpplc -m smc-apf
 ```
 
@@ -48,7 +48,7 @@ It avoids [path degeneration](../Explanation/path-degeneration.md) by keeping a 
 
 ### Likelihood resampling
 
-```
+```bash
 tpplc -m smc-bpf --resample likelihood
 ```
 
@@ -56,7 +56,7 @@ resamples the particles at every `observe`, `weight`, and `logWeight` statement.
 
 ### Aligned resampling
 
-```
+```bash
 tpplc -m smc-bpf --resample align
 ```
 
@@ -64,7 +64,7 @@ resamples the particles after `observe`, `weight`, and `logWeight` statements th
 
 ### Manual resampling
 
-```
+```bash
 tpplc -m smc-bpf --resample manual
 ```
 
@@ -85,7 +85,7 @@ This is not as efficient as its aligned version and should be used only for test
 
 ### Aligned lightweight MCMC
 
-```
+```bash
 tpplc -m mcmc-lightweight --align
 ```
 
@@ -94,7 +94,7 @@ Moves are proposed by resampling one `assume` statement at random.
 Draws that are [aligned](../Explanation/alignment.md) together with some unaligned draws are reused to save computational effort.
 It has an option of whether to do a continuation-passing style transformation in order to avoid recomputation of the likelihood:
 
-```
+```bash
 tpplc -m mcmc-lightweight --cps partial
 ```
 
@@ -102,13 +102,13 @@ is the default, which should be the most performant. For details, see [Lunden et
 
 One can also use a full CPS transformation
 
-```
+```bash
 tpplc -m mcmc-lightweight --cps full
 ```
 
 which is the traditional algorithm, or to turn it off completely
 
-```
+```bash
 tpplc -m mcmc-lightweight --cps none
 ```
 
