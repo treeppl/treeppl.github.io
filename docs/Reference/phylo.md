@@ -1,7 +1,3 @@
----
-id: phylo
----
-
 # Phylogenetic Reference
 
 A library of phylogenetic models has been created as part of TreePPL.  These models can be found under `models/phylo`.

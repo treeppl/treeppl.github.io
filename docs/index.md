@@ -1,11 +1,11 @@
----
-id: docs
----
-
 # TreePPL Documentation
 
-Our documentation follows the [diátaxis](https://diataxis.fr/) approach to technical document writing and therefore it is structured in [tutorials](docs/Tutorials), [how-to guides](docs/Howtos), [explanation](docs/Explanation), and [reference](docs/Reference).
+Our documentation follows the [diátaxis](https://diataxis.fr/) approach to technical document writing and therefore it is structured in :
 
+ - [tutorials](docs/Tutorials) is a practical activity, in which the user learns by doing something meaningful, towards some achievable goal.
+ - [how-to guides](docs/Howtos) helps the user get something done, correctly and safely; it guides the user’s action.
+ - [explanation](docs/Explanation) deepens and broadens the reader’s understanding of a subject. It brings clarity, light and context.
+ - [reference](docs/Reference) material contains theoretical knowledge that a user looks to in their work.
 
 If you are new to TreePPL, we recommend beginning at the [Getting Started Tutorial](docs/Tutorials/getting-started).
 

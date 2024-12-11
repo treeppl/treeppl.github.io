@@ -1,7 +1,3 @@
----
-id: user
----
-
 # TreePPL Cheat Sheet
   
 ## Basic features

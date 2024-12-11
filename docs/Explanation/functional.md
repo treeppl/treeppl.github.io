@@ -1,7 +1,3 @@
----
-id: functional
----
-
 # Functional programming languages
 
 Functional programming languages focus on expressing computation as function transformations rather than as instructions. One main feature of functional languages is immutability. That means the result of evaluating an expression can be stored as a named value but you can't change the value of this named value.
