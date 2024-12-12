@@ -66,9 +66,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 ```
 
-> **_NOTE_** Using a different OCaml version simultaneously with OCaml 5
-> The above script will create a switch for OCaml 5, but you could use different versions if you need them with `opam switch`.
-> 
+:::note
+
+Using a different OCaml version simultaneously with OCaml 5
+The above script will create a switch for OCaml 5, but you could use different versions if you need them with `opam switch`.
+
+:::
 
 The following script takes care of the **Miking and TreePPL compilers and packages**:
 
@@ -99,7 +102,11 @@ pip install "git+https://github.com/treeppl/treeppl-python#egg=treeppl"
 pip install matplotlib seaborn
 ```
 
-> **_NOTE_** If `error: externally-managed-environment` arisen, you can use the option `--break-system-packages` to handle it. For more details, read your local python README.venv
+:::note
+
+If `error: externally-managed-environment` arisen, you can use the option `--break-system-packages` to handle it. For more details, read your local python README.venv
+
+:::
 
 This script will create three source directories in the directory where you execute it: `miking`, `miking-dppl` and `treeppl` and instruct you how to set up the environment variables.  If you don’t want to do any TreePPL development, you can remove `miking` and `miking-dppl` install sources, but you don’t have to.
 
