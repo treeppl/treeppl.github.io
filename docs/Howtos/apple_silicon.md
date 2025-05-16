@@ -1,5 +1,11 @@
 # Mac (Apple silicon) Installation Guide
 
+:::warning
+
+There are currently issues with installing some of TreePPL's dependencies on recent Macs (Apple Silicon). We are working on it, but for now it's likely much easier to use Linux or WSL.
+
+:::
+
 ### 1. Check Command Line Tools
 
 Before proceeding, ensure that your Command Line Tools are up-to-date. Run the following in your terminal:
