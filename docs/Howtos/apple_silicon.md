@@ -2,7 +2,7 @@
 
 :::warning
 
-There are currently issues with installing some of TreePPL's dependencies on recent Macs (Apple Silicon). We are working on it, but for now it's likely much easier to use Linux or WSL.
+There are currently issues with installing some of TreePPL's dependencies on recent Macs (Apple Silicon). We are working on it, but for now we recommend using the Linux or WSL versions instead, if possible.
 
 :::
 
