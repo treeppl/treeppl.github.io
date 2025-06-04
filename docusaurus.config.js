@@ -25,9 +25,9 @@ const config = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          path: 'docs', // Main documentation
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          routeBasePath: 'docs', // This makes docs appear at /docs/
         },
         blog: false,
         theme: {
@@ -36,7 +36,18 @@ const config = {
       },
     ],
   ],
-
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'getting-started',
+        path: 'getting-started',
+        routeBasePath: 'getting-started',
+        sidebarPath: './sidebars.js',
+        // ... other options
+      },
+    ],
+  ],
   themeConfig: {
       docs: {
         sidebar: {
@@ -52,17 +63,20 @@ const config = {
         // },
         items: [
           {
-            type: 'doc',
-            docId: 'Howtos/index',
+            to: '/getting-started/getting-started',
             position: 'left',
-            label: 'Installation',
+            label: 'Getting Started',
+            activeBaseRegex: `/getting-started/`
           },
+
           {
             type: 'doc',
-            docId: 'index',
+            docId: 'docs',
             position: 'left',
             label: 'Documentation',
           },
+          
+
           {
             href: 'https://github.com/treeppl',
             label: 'GitHub',
