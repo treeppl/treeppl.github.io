@@ -22,4 +22,4 @@ yarn-error.log*
 /.quarto/
 
 # vscode
-.vscode
+.vscode/
