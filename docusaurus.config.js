@@ -43,7 +43,7 @@ const config = {
         id: 'getting-started',
         path: 'getting-started',
         routeBasePath: 'getting-started',
-        sidebarPath: './sidebars.js',
+        sidebarPath: require.resolve('./sidebarsGettingStarted.js'),
         // ... other options
       },
     ],

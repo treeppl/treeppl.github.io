@@ -1,5 +1,6 @@
 ---
 id: docs
+sidebar_position: 1
 ---
 
 # TreePPL Documentation
