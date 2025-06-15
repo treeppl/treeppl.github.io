@@ -7,7 +7,7 @@ const darkCodeTheme = themes.dracula;
 
 const config = {
   title: 'TreePPL',
-  tagline: 'A Universal Probabilistic Programming Language Inspired from Phylogenetics',
+  tagline: 'A Universal Probabilistic Programming Language for Phylogenetics and Evolutionary Biology',
   url: 'http://treeppl.org/',
   baseUrl: '/',
   projectName: 'treeppl.github.io',

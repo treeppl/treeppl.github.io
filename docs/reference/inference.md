@@ -1,4 +1,4 @@
-# Inference
+# Statistical Inference
 
 TreePPL supports a continuously growing number of inference schemas.
 To define a schema, the user has to select the inference method and options.

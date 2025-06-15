@@ -1,4 +1,4 @@
-# TreePPL Cheat Sheet
+# Cheat Sheet
   
 ## Basic features
 

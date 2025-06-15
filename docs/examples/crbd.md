@@ -1,8 +1,10 @@
-# Phylogenetic Reference
+---
+id: crbd
+title: Constant rate birth-death
+sidebar_label: CRBD
+---
 
-A library of phylogenetic models has been created as part of TreePPL.  These models can be found under `models/phylo`.
-
-## Constant rate birth-death
+# Constant rate birth-death
 
 - `models/phylo/crbd`
 
@@ -16,8 +18,3 @@ Now you can use the executable `out [number of particles] [number of sweeps]` to
 
 Feel free to experiment with the model, change the input, the priors, or the output.
 
-## ClaDS
-
-- `models/phylo/clads`
-
-`clads.tppl` in the model directory is a simple version of ClaDS that returns the speciation rate λ; however, it does not return the branch-specific rates.  Feel free to extend it.

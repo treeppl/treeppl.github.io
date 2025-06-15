@@ -1,4 +1,4 @@
-# TreePPL Style Guide
+# Style Guide
 
 :::warning
 
