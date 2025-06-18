@@ -10,26 +10,25 @@ const FeatureList: FeatureItem[] = [
     image: '/img/easy-to-use.png',
     description: (
       <>
-      Designed to meet the needs of computational biologists.
+      Designed to be user-friendly.
       </>
     ),
   },
   {
-    title: 'Phylogenetic Data',
+    title: 'Focus on Life Sciences',
     image: '/img/phylogenetic.png',
     description: (
       <>
-        Supports natively the <a href="https://github.com/kudlicka/nexus2phyjson/blob/master/doc/phyjson_format_description.md">PhyJSON </a>
-        format for evolutionary trees.
+        Focused on, but not limited to, the field of phylogenetics, evolutionary biology and biodiversity.
       </>
     ),
   },
   {
-    title: 'Rich Model Library',
+    title: 'Model Library',
     image: 'img/model.png',
     description: (
       <>
-        Offers state-of-the art diversification models as templates.
+        Offers a variety of state-of-the art models as templates.
       </>
     ),
   },
