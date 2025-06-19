@@ -1,16 +1,22 @@
 ---
 id: tree_inference
 title: Tree inference
-sidebar_label: Tree inference
+sidebar_label: Tree inference models
 ---
 
-# Tree inference
+# Tree inference models
 
-- `models/phylo/tree_inference`
+# Jukes-Cantor
 
-The model version `tree_inference.tppl` is a simple backwards tree construction based on aligned DNA sequence data (converted to integers) as input, and using the Jukes-Cantor model of nucleotide substitution. An example input data file is provided: `tree_inference.json`
+  - **Model files:** `models/phylo/tree_inference.tppl`, `models/phylo/tree_inference_pruning.tppl`, `models/phylo/tree_inference_scaled.tppl`
 
-There are also other and more computationally efficient model versions using hard-coded pruning (Felsenstein's pruning algorith) and a scaled approach to the messages. Use the scaled version for efficient inference on larger datasets.
+  - **Example input data:** `models/phylo/tree_inference.json`
 
-These basic models can easily be extended to adhere other models of nucleotide substitution. As an example, the GTR model with pruning is also available. 
+  - **Brief info:** The model version `tree_inference.tppl` is a simple backwards tree reconstruction based on aligned DNA sequence data (converted to integers) as input, and using the Jukes-Cantor model of nucleotide substitution. There are also other and more computationally efficient model versions:  `tree_inference_pruning.tppl` using hard-coded pruning (Felsenstein's pruning algorith) and `tree_inference_scaled.tppl` with pruning and a scaled approach to the messages. Use the scaled version for efficient inference on larger datasets.
 
+# GTR
+  - **Model file:** `models/phylo/tree_inference_pruning_gtr.tppl`
+
+  - **Example input data:** `models/phylo/tree_inference.json`
+
+  - **Brief info:** The basic models using Jukes-Cantor above can easily be extended to adhere other models of nucleotide substitution. As an example, this is the GTR model with pruning.
