@@ -139,8 +139,15 @@ const config = {
         //   },
         // ],
         copyright: `Copyright © ${new Date().getFullYear()} <a href="/devteam"> TreePPL Research and Development Team</a> <br>
-        Funded by the EU Horizon 2020 Marie Skłodowska-Curie grant agreement PhyPPL No. 898120,<br>
-        and by the Swedish Foundation for Strategic Research, as well as Vetenskapsrådet (VR).<br>
+        This project was in part financially supported by the Swedish Foundation for Strategic Research (FFL15–0032 and <br>
+        RIT15–0012), by Digital Futures and by the Swedish Research Council (grant 2018–04329 awarded to DB, grants <br>
+        2018-04620 and 2021–04830 awarded to FR, and International Postdoc Grant 2020–06422 awarded to MPB), and by the <br> 
+        European Union’s Horizon 2020 research and innovation program under the Marie Skłodowska–Curie grant agreement <br>
+        PhyPPL No. 898120 to V.S. The research has also partially been carried out as part of the Vinnova Competence Center <br>
+        for Trustworthy Edge Computing Systems and Applications at KTH Royal Institute of Technology. This work was also <br>
+        partially supported by the Wallenberg AI, Autonomous Systems and Software Program (WASP) funded by the Knut <br>
+        and Alice Wallenberg Foundation. As of 2025, the work is also supported by the project DarkTree, funded by <br> 
+        the Knut and Alice Wallenberg Foundation.<br>
         This slide has been designed using images from <a href="https://flaticon.com">Flaticon.com</a><br>
         Built via <a href="https://docusaurus.io">Docusaurus.io</a>`,
       },

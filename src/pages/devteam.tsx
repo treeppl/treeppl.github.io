@@ -40,7 +40,7 @@ const PersonList: PersonItem[] = [
     title: (<a href="https://marianapbraga.com">Mariana P. Braga</a>),
     image: 'img/mariana.jpg',
     description: (
-      <>Postdoctoral Researcher at the Swedish University of Agricultural Sciences</>
+      <>Associate senior lecturer at the Department of Ecology, SLU and DDLS Fellow, Scilifelab</>
     ),
   },
   {
