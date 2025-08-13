@@ -85,7 +85,7 @@ const config = {
           {
             to: 'devteam',
             position: 'left',
-            label: 'Meet the Team',
+            label: 'Contributors',
           },
         ],
       },

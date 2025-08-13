@@ -1,7 +1,7 @@
-# Statistical Inference
+# Inference methods
 
-TreePPL supports a continuously growing number of inference schemas.
-To define a schema, the user has to select the inference method and options.
+TreePPL supports a continuously growing number of inference methods.
+The user needs to select the inference method and options.
 To get a complete list of the available methods and options the user can type `tpplc` on the command line, which will provide all supported command-line options.
 One can define the schema by issuing a command-line compilation command, or by making the appropriate choices in Python or R.
 Please find below a reference list of the supported strategies with an explanation.
