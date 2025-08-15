@@ -103,15 +103,15 @@ export default function ContributorsPage() {
           title="Current core team"
           people={PersonList}
         />
-        <PeopleSection
-          id="contributors"
-          title="Contributors"
-          people={[]}
-        />
-        <PeopleSection
-          id="how-to-become-a-contributor"
-          title="How to become a contributor"
-          people={[]}
+    //    <PeopleSection
+    //      id="contributors"
+    //      title="Contributors"
+    //      people={[]}
+    //    />
+    //    <PeopleSection
+    //      id="how-to-become-a-contributor"
+    //      title="How to become a contributor"
+     //     people={[]}
         />
       </div>
     </Layout>
