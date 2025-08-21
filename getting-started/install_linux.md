@@ -1,3 +1,7 @@
+---
+sidebar_class_name: hidden
+---
+
 # Linux Installation Guide
 
 ## Ubuntu 22.04.4 LTS (GNU/Linux 6.5.0-41-generic x86_64) running on bare metal using bash with elevated privileges
