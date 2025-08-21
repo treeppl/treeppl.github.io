@@ -4,7 +4,7 @@ import styles from './devteam.module.css';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-// --- Your existing list of people (unchanged) ---
+// List of current core team
 const PersonList = [
   {
     title: (<a href="https://www.phyloeco.bio.ens.psl.eu/people.html">Viktor Senderov</a>),
@@ -15,11 +15,6 @@ const PersonList = [
     title: (<a href="https://jan.kudlicka.eu">Jan Kudlicka</a>),
     image: 'img/jan.png',
     description: (<>Associate Professor of Data Science at BI Norwegian Business School</>),
-  },
-  {
-    title: (<a href="https://dlunde.github.io/">Daniel Lundén</a>),
-    image: 'img/dlunde.png',
-    description: (<>Senior Member of Technical Staff at Oracle</>),
   },
   {
     title: (<a href="https://www.kth.se/profile/vipa">Viktor Palmkvist</a>),
@@ -63,6 +58,15 @@ const PersonList = [
   },
 ];
 
+// List of Contributors
+const PersonList_Cont = [
+  {
+    title: (<a href="https://dlunde.github.io/">Daniel Lundén</a>),
+    image: 'img/dlunde.png',
+    description: (<>Senior Member of Technical Staff at Oracle</>),
+  },
+];
+
 // --- Person card ---
 function Person({title, image, description}) {
   return (
@@ -103,10 +107,10 @@ export default function ContributorsPage() {
           title="Current core team"
           people={PersonList}
         />
-    //    <PeopleSection
-    //      id="contributors"
-    //      title="Contributors"
-    //      people={[]}
+        <PeopleSection
+          id="contributors"
+          title="Contributors"
+          people={PersonList_Cont}
     //    />
     //    <PeopleSection
     //      id="how-to-become-a-contributor"

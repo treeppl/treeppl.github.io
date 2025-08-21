@@ -10,7 +10,7 @@ The TreePPL documentation consists of:
  - [Python environment](docs/python-environment), linking to the Python Environment documentation,
   - [R environment](docs/R-environment), linking to the R Environment documentation,
  - [Model examples](docs/examples), which illustrate key models available in TreePPL,
- - [Language reference](docs/language-reference), which contains a language cheat sheet, distributions, inference methods, etc.
+ - [Language reference](docs/language-reference), which contains a language overview, distributions, inference methods, etc.
  - [Tutorials](docs/tutorials), in which the user learns by doing something meaningful, towards some achievable goal,
 <!-- - To be added: System, which is documentation for the people who would like to develop the TreePPL language itself -->
 
