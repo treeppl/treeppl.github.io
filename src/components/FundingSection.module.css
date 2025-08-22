@@ -1,0 +1,29 @@
+
+.sectionContainer {
+  padding: 2rem 0;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: var(--ifm-font-size-28);
+  color: var(--ifm-color-text-dark);
+  font-weight: bold;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column; /* This is the key change */
+  align-items: center; /* Centers the content horizontally */
+}
+
+.sectionImage img {
+  text-align: center;
+  width: 100%; /* Makes the image container take the full width */
+  margin-bottom: 2rem; /* Adds space between the image and the text */
+}
+
+.sectionDescription {
+  font-size: 1.1rem;
+  text-align: center; /* Centers the description text */
+}

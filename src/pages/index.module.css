@@ -4,16 +4,17 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 7.5rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-image: url("/img/background.jpg");
+  background-image: url("/img/treebk4_green_light.png");
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
-  color: white;
-  text-shadow: 1px 1px 4px black, -1px -1px 4px black, 1px -1px 4px black, -1px 1px 4px black;
+  color: rgb(8, 8, 8);
+  font-weight: normal;
+  /* text-shadow: 1px 1px 4px black, -1px -1px 4px black, 1px -1px 4px black, -1px 1px 4px black; */
 }
 
 @media screen and (max-width: 966px) {
@@ -27,3 +28,5 @@
   align-items: center;
   justify-content: center;
 }
+
+/* rgb(20, 56, 32); */

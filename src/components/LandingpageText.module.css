@@ -1,0 +1,40 @@
+.Tagline {
+  font-size: var(--ifm-font-size-28);
+  color: var(--ifm-color-text-dark);
+  font-weight: bold;
+}
+
+.Description {
+  font-size: var(--ifm-font-size-20);
+  color: var(--ifm-color-text-light);
+  padding: 1rem 0;
+  font-weight: normal;
+}
+
+.DescriptionBold {
+  font-size: var(--ifm-font-size-20);
+  color: var(--ifm-color-text-light);
+  padding: 1rem 0;
+  font-weight: bold;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  max-width: var(--ifm-container-width);
+  margin: 0 auto;
+  padding: 8rem 0;
+}
+
+.HeaderContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: left;
+  max-width: 1200px;
+}
+

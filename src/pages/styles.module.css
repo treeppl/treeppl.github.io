@@ -1,0 +1,18 @@
+
+
+.Tagline {
+  font-size: var(--ifm-font-size-28);
+  color: var(--ifm-color-on-background-2);
+  font-weight: bold;
+}
+
+.Title {
+  font-size: var(--ifm-font-size-48);
+  color: var(--ifm-color-on-background);
+  font-weight: bold;
+}
+
+.Description {
+  font-size: var(--ifm-font-size-18);
+  color: var(--ifm-color-on-background-3);
+}

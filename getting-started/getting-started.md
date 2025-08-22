@@ -4,10 +4,6 @@ id: getting-started
 
 # Getting started with TreePPL
 
-TreePPL is a universal probabilistic programming language (PPL) designed for probabilistic modeling and inference in phylogenetics. TreePPL expresses models as computer programs that generate simulations based on input data. Specialized inference machinery then estimate posterior probability distributions for the program. This approach lets users focus on model description while getting inference automatically. 
-
-The modeling language is designed to feel familiar to R and Python users and employs a functional programming style that works well with generic inference algorithms. Users can conveniently compile and run model programs from Python or R environments, which handle pre-processing, data input, inference control, and output processing.
-
 
 ## Using a TreePPL interface
 
