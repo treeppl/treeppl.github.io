@@ -65,6 +65,11 @@ const PersonList_Cont = [
     image: 'img/dlunde.png',
     description: (<>Senior Member of Technical Staff at Oracle</>),
   },
+  {
+    title: (<a >Erik Danielsson</a>),
+    image: 'img/erikd.jpeg',
+    description: (<>Undergraduate student at Lund University</>),
+  },
 ];
 
 // --- Person card ---

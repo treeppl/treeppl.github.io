@@ -46,3 +46,14 @@ html[data-theme='dark'] {
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+/* Tables: Keep multi-line cells aligned ok */
+.language-table table th,
+.language-table table td {
+  vertical-align: top;   /* or 'middle' if you prefer */
+  line-height: 1.4;
+}
+
+/* Tables: optional adds */
+.language-table table td:first-child { white-space: nowrap; } /* keep short labels tidy */
+.language-table table code { display: inline-block; }         /* better baselines for multi-line code */
