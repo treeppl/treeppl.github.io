@@ -40,18 +40,22 @@ when more text is needed */</code></td></tr>
 <tr>
   <td>Creating a function without a return</td>
   <td>
-  <pre style={{whiteSpace: 'pre', margin: 0}}><code>function flip(datapoint: Bool, probability: Real) &#123;
-      &nbsp;&nbsp; observe datapoint ~ Bernoulli(probability);
-      &#125;</code></pre>
+  ```
+  function flip(datapoint: Bool, probability: Real) {
+    observe datapoint ~ Bernoulli(probability);
+  };
+  ```
       </td>
 </tr>
 <tr>
   <td>Creating a function with a return</td>
   <td>
-    <pre style={{whiteSpace: 'pre', margin: 0}}><code>function flip(datapoint: Bool, probability: Real) =&gt; Real &#123;
-    &nbsp;&nbsp; observe datapoint ~ Bernoulli(probability);
-    &nbsp;&nbsp; return probability;
-    &#125;</code></pre>
+  ```
+  function flip(datapoint: Bool, probability: Real) => Real {
+    observe datapoint ~ Bernoulli(probability);
+    return probability;
+  }
+  ```
   </td>
 </tr>
 <tr><td>Conditional (if/else statement)</td><td><code>if (condition) &#123; execute_when_true &#125; else &#123; execute_when_false &#125;</code></td></tr>
@@ -109,18 +113,24 @@ when more text is needed */</code></td></tr>
 <tr>
   <td>A model function is needed by every program.<br />
   It specifies the probabilistic model.</td>
-  <td><pre style={{whiteSpace: 'pre', margin: 0}}><code>model function coinModel(coinflips: Bool[]) =&gt; Real&#123;
-&nbsp;&nbsp;// specify prior
-&nbsp;&nbsp;// condition the likelihood on data
-&nbsp;&nbsp;// return posterior
-&#125;</code></pre></td>
+  <td>
+  ```
+  model function coinModel(coinflips: Bool[]) => Real[] {
+    // specify prior
+    // condition the likelihood on data
+    // return posterior
+  };
+  ```
+</td>
 </tr>
-<tr><td>Use the <code>assume</code> keyword to sample form a prior distribution <br /> 
-(here using the Beta distribution)</td><td><code>assume p ~ Beta(a, b);</code></td></tr>
+<tr><td>Use the <code>assume</code> keyword to sample form a prior <br /> 
+distribution (here using the Beta distribution)</td><td><code>assume p ~ Beta(a, b);</code></td></tr>
 <tr><td>Use the <code>observe</code> keyword to condition the likelihood <br /> 
 on observed data (here using the Beta distribution)</td><td><code>observe data ~ Beta(a, b);</code></td></tr>
 <tr><td>To manipulate the likelihood directly use <code>weight</code></td><td><code>weight(lik);</code></td></tr>
 <tr><td>or <code>logWeight</code> on the logarithmic scale</td><td><code>logWeight(lik);</code></td></tr>
-<tr><td>The posterior is the returned value of the model function</td><td><code>return p;</code></td></tr>
+<tr><td>The posterior is the returned value of the <br />  model function over one or more parameters </td><td><code>return p;</code></td></tr>
 </table>
 </div>
+
+

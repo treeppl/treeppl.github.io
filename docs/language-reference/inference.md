@@ -1,6 +1,6 @@
 # Inference methods
 
-TreePPL supports number of inference methods.
+TreePPL supports several inference methods.
 The user needs to select the inference method and options.
 To get a complete list of the available methods and options the user can type `tpplc --help` on the command line, which will provide all supported command-line options.
 One can define the schema by issuing a command-line compilation command, or by making the appropriate choices in Python or R.
@@ -39,7 +39,7 @@ tpplc <program> -m smc-bpf
 ```
 
 This is the classical SMC schema.
-Except in special cases, the alive particle filter (APF) should be preferred as the BPF can suffer from [path degeneration](../Explanation/path-degeneration.md).
+Except in special cases, the alive particle filter (APF) should be preferred as the BPF can suffer from path degeneration.
 
 This inference is affected by the resample placement method.
 
