@@ -4,96 +4,80 @@ import styles from './devteam.module.css';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-const PersonList: PersonItem[] = [
+// List of current core team
+const PersonList = [
   {
-    title: (
-      <a href="https://www.phyloeco.bio.ens.psl.eu/people.html">Viktor Senderov</a>
-      ),
+    title: (<a href="https://www.phyloeco.bio.ens.psl.eu/people.html">Viktor Senderov</a>),
     image: '/img/viktor.png',
-    description: (
-      <>Postdoctoral Researcher at L'École normale supérieure</>
-    ),
+    description: (<>Postdoctoral Researcher at L'École normale supérieure</>),
   },
   {
     title: (<a href="https://jan.kudlicka.eu">Jan Kudlicka</a>),
     image: 'img/jan.png',
-    description: (
-      <>Associate Professor of Data Science at BI Norwegian Business School</>
-    ),
-  },
-  {
-    title: (<a href="https://dlunde.github.io/">Daniel Lundén</a>),
-    image: 'img/dlunde.png',
-    description: (
-      <>Senior Member of Technical Staff at Oracle</>
-    ),
+    description: (<>Associate Professor of Data Science at BI Norwegian Business School</>),
   },
   {
     title: (<a href="https://www.kth.se/profile/vipa">Viktor Palmkvist</a>),
     image: '/img/vipa.jpg',
-    description: (
-      <>Postdoctoral Researcher at Department of Bioinformatics and Genetics,
-        Swedish Museum of Natural History</>
-    ),
+    description: (<>Postdoctoral Researcher at Department of Bioinformatics and Genetics,
+      Swedish Museum of Natural History</>),
   },
   {
     title: (<a href="https://marianapbraga.com">Mariana P. Braga</a>),
     image: 'img/mariana.jpg',
-    description: (
-      <>Associate senior lecturer at the Department of Ecology, SLU and DDLS Fellow, Scilifelab</>
-    ),
+    description: (<>Associate senior lecturer at the Department of Ecology, SLU and DDLS Fellow, Scilifelab</>),
   },
   {
     title: (<a href="https://ronquistlab.github.io/people.html#emma">Emma Granqvist</a>),
     image: 'img/emma.jpeg',
-    description: (
-      <>Postdoctoral Researcher at Department of Bioinformatics and Genetics,
-        Swedish Museum of Natural History</>
-    ),
+    description: (<>Postdoctoral Researcher at Department of Bioinformatics and Genetics,
+      Swedish Museum of Natural History</>),
   },
   {
     title: (<a href="https://www.kth.se/profile/caylak">Gizem Çaylak</a>),
     image: 'img/caylak.jpeg',
-    description: (
-      <>Ph.D. Candidate at KTH Royal Institute of Technology</>
-    ),
+    description: (<>Ph.D. Candidate at KTH Royal Institute of Technology</>),
   },
   {
     title: (<a href="https://ronquistlab.github.io/people.html#tim">Thimothée Virgoulay</a>),
     image: 'img/timv.jpg',
-    description: (
-      <>Postdoctoral Researcher at Department of Bioinformatics and Genetics,
-        Swedish Museum of Natural History</>
-    ),
+    description: (<>Postdoctoral Researcher at Department of Bioinformatics and Genetics,
+      Swedish Museum of Natural History</>),
   },
   {
     title: (<a href="https://ronquistlab.github.io/people.html">Fredrik Ronquist</a>),
     image: '/img/fredrik.jpg',
-    description: (
-      <><em>PI together with Broman (eq. contribution) </em> 
-      Department of Bioinformatics and Genetics,
-      Swedish Museum of Natural History</>
-    ),
+    description: (<><em>PI together with Broman (eq. contribution) </em>
+      Department of Bioinformatics and Genetics, Swedish Museum of Natural History</>),
   },
   {
     title: (<a href="https://people.kth.se/~dbro/bio.html">David Broman</a>),
     image: 'img/david2021.jpg',
-    description: (
-      <><em>PI together with Ronquist (eq. contribution) </em> 
-      EECS and Digital Futures, KTH Royal Institute of Technology </>
-    ),
+    description: (<><em>PI together with Ronquist (eq. contribution) </em>
+      EECS and Digital Futures, KTH Royal Institute of Technology</>),
   },
 ];
 
-function Person({title, image, description}: PersonItem) {
+// List of Contributors
+const PersonList_Cont = [
+  {
+    title: (<a href="https://dlunde.github.io/">Daniel Lundén</a>),
+    image: 'img/dlunde.png',
+    description: (<>Senior Member of Technical Staff at Oracle</>),
+  },
+  {
+    title: (<a >Erik Danielsson</a>),
+    image: 'img/erikd.jpeg',
+    description: (<>Undergraduate student at Lund University</>),
+  },
+];
+
+// --- Person card ---
+function Person({title, image, description}) {
   return (
     <div className={clsx('col col--3')}>
       <div className="text--center">
-        <img
-          className={styles.personSvg}
-          alt={title}
-          src={useBaseUrl(image)}
-        />
+        <img className={styles.personSvg} alt={String(title)} src={useBaseUrl(image)} />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
@@ -103,41 +87,42 @@ function Person({title, image, description}: PersonItem) {
   );
 }
 
-// Shuffle the order of authors each time you display
-function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
-
-  // While there remain elements to shuffle.
-  while (currentIndex != 0) {
-
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
+// --- Section renderer (shows just a heading if empty) ---
+function PeopleSection({id, title, people}) {
+  return (
+    <section id={id} className={styles.persons}>
+      <div className="container">
+        <h2 className={clsx('margin-bottom--lg', styles.sectionTitle)}>{title}</h2>
+        {people && people.length > 0 && (
+          <div className="row">
+            {people.map((p, i) => <Person key={`${id}-${i}`} {...p} />)}
+          </div>
+        )}
+      </div>
+    </section>
+  );
 }
 
-// Use this if you want alphanumeric sorting
-// {PersonList.sort((a, b) => a.title.localeCompare(b.title)).map((props, idx) =>
-// Bug: does not reshuffle when you click F5
-// {shuffle(PersonList).map((props, idx) =>
-export default function Hello() {
+export default function ContributorsPage() {
   return (
-  <Layout title="Meet the Team" description="Meet the Team">
-    <div>
-      <section className={styles.persons}>
-        <div className="container">
-          <div className="row">
-          {PersonList.map((props, idx) =>
-          (<Person key={idx} {...props} />))} 
-          </div>
-        </div>
-      </section>
-    </div>
-  </Layout>);
+    <Layout title="Contributors" description="Contributors">
+      <div>
+        <PeopleSection
+          id="current-core-team"
+          title="Current core team"
+          people={PersonList}
+        />
+        <PeopleSection
+          id="contributors"
+          title="Contributors"
+          people={PersonList_Cont}
+    //    />
+    //    <PeopleSection
+    //      id="how-to-become-a-contributor"
+    //      title="How to become a contributor"
+     //     people={[]}
+        />
+      </div>
+    </Layout>
+  );
 }

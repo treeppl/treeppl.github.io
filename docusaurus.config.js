@@ -77,7 +77,7 @@ const config = {
           {
             to: 'devteam',
             position: 'left',
-            label: 'Meet the Team',
+            label: 'Contributors',
           },
           {
             href: 'https://github.com/treeppl',
