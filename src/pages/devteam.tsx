@@ -68,7 +68,7 @@ const PersonList_Cont = [
   {
     title: (<a >Erik Danielsson</a>),
     image: 'img/erikd.jpeg',
-    description: (<>Undergraduate student at Lund University</>),
+    description: (<>Master student at Lund University</>),
   },
 ];
 
