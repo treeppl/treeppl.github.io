@@ -1,3 +1,8 @@
+---
+id: r
+sidebar_position: 5
+---
+
 # R Environment
 
 `treepplr` is an R package for using TreePPL:

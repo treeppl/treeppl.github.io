@@ -63,7 +63,7 @@ tpplc <program> -m smc-apf
 ```
 
 This is a more advanced SMC schema than BPF.
-It avoids [path degeneration](../Explanation/path-degeneration.md) by keeping a population of particles alive.
+It avoids path degeneration by keeping a population of particles alive.
 
 [Reference: Kudlicka et al. 2020](https://proceedings.mlr.press/v115/kudlicka20a.html).
 
@@ -94,7 +94,7 @@ tpplc <program> -m mcmc-lightweight
 
 This is the Markov-chain Monte Carlo (MCMC) schema that should be used in most cases.
 Moves are proposed by resampling one `assume` statement at random.
-Draws that are [aligned](../Explanation/alignment.md) together with some unaligned draws are reused to save computational effort.
+Draws that are aligned together with some unaligned draws are reused to save computational effort.
 It has an option of whether to do a continuation-passing style transformation in order to avoid recomputation of the likelihood. For details, see [Lunden et al. 2024](https://link.springer.com/chapter/10.1007/978-3-031-57267-8_12).
 
 #### Options available

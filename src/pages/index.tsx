@@ -4,7 +4,9 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
-import HomepageFeatures from '../components/HomepageFeatures';
+//import HomepageFeatures from '../components/HomepageFeatures';
+import LandingpageText from '../components/LandingpageText';
+import FundingSection from '../components/FundingSection';
 
 
 function HomepageHeader() {
@@ -19,7 +21,7 @@ function HomepageHeader() {
   );
 }
 
-export default function Home(): JSX.Element {
+export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
@@ -28,7 +30,11 @@ export default function Home(): JSX.Element {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <LandingpageText />
+        <FundingSection 
+          title="Funding"
+          imageUrl="/img/funding.png"
+        />
       </main>
     </Layout>
   );
