@@ -4,27 +4,39 @@ id: getting-started
 
 # Getting started with TreePPL
 
+We have developed R and Python interfaces to facilitate installation, data preparation, program compilation and execution, post-processing, and visualization of inference results. We strive to provide the same functionalities in R and Python, but there might be small differences between the two interfaces because the project is under active development.
 
-## Using a TreePPL interface
+If you want to contribute to TreePPL development, see [Instructions for developers](/docs/for-developers/). 
 
-We have developed R and Python interfaces to faciliate data preparation, program compilation and execution, post-processing, and visualization of inference results. We strive to provide the same functionalities in R and Python, but there might be small differences between the two interfaces because the project is under active development.
+:::warning
 
-- **R** TreePPL is installed with the R package *treepplr*. [Install treepplr](https://treeppl.org/treepplr/index.html).
+We currently support Linux and MacOS only. For Windows users there are two options: use a virtual machine/server/cluster or use TreePPL with _WSL_ (see [Windows installation instructions](/docs/for-developers/install_windows)).
 
-- **Python** TreePPL is installed with the package *treeppl-python*. [Install treeppl-python](https://github.com/treeppl/treeppl-python).
-
-
-## Using TreePPL in the command line
-
-You can install TreePPL without R or Python. This option is better suited for those who want to contribute to TreePPL development. 
-
-Choose your operating system:
-
-- [Instructions for Linux](install_linux.md)
-- [Instructions for Mac](install_apple_silicon.md)
-- [Instructions for Windows](install_windows.md)
+:::
 
 
+## For R users
+
+When you install the R package *treepplr*, TreePPL and everything it requires is also installed. For that, run within R or RStudio:
+
+```r title="Install treepplr from R or RStudio"
+devtools::install_github("treeppl/treepplr")
+```
+
+_treepplr_ converts data to a format readable by TreePPL, reads the TreePPL output, and connects to downstream analyses in model-specific packages, such as the _evolnets_ package for the host repertoire evolution model.
+
+For complete _treepplr_ documentation, see [treepplr](https://treeppl.org/treepplr). There you will find the complete list of package functions (Reference) and all vignettes (Articles).
+
+
+## For Python users
+
+TreePPL can also be installed with the package _treeppl-python_. For that, got to [list of releases](https://github.com/treeppl/treeppl-python/releases) and download the wheel from the most recent release for your operating system. Then, run within Python:
+
+```python title="Install treepplr from Python"
+pip install name-of-file.whl
+```
+
+For more information, check _treeppl-python_ [Github repository](https://github.com/treeppl/treeppl-python).
 
 
 

@@ -1,6 +1,4 @@
----
-sidebar_class_name: hidden
----
+
 
 # Linux Installation Guide
 

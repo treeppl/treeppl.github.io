@@ -23,7 +23,7 @@ const PersonList = [
       Swedish Museum of Natural History</>),
   },
   {
-    title: (<a href="https://marianapbraga.com">Mariana P. Braga</a>),
+    title: (<a href="https://evonetslab.github.io">Mariana P. Braga</a>),
     image: 'img/mariana.jpg',
     description: (<>Associate senior lecturer at the Department of Ecology, SLU and DDLS Fellow, Scilifelab</>),
   },
@@ -47,13 +47,13 @@ const PersonList = [
   {
     title: (<a href="https://ronquistlab.github.io/people.html">Fredrik Ronquist</a>),
     image: '/img/fredrik.jpg',
-    description: (<><em>PI together with Broman (eq. contribution) </em>
+    description: (<>Professor at the
       Department of Bioinformatics and Genetics, Swedish Museum of Natural History</>),
   },
   {
-    title: (<a href="https://people.kth.se/~dbro/bio.html">David Broman</a>),
+    title: (<a href="https://people.kth.se/~dbro/">David Broman</a>),
     image: 'img/david2021.jpg',
-    description: (<><em>PI together with Ronquist (eq. contribution) </em>
+    description: (<>Professor at
       EECS and Digital Futures, KTH Royal Institute of Technology</>),
   },
 ];

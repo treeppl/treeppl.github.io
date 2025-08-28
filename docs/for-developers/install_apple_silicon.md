@@ -1,6 +1,3 @@
----
-sidebar_class_name: hidden
----
 
 # Mac (Apple silicon) Installation Guide
 
