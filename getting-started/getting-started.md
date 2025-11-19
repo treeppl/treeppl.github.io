@@ -1,6 +1,8 @@
 ---
 id: getting-started
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Getting started with TreePPL
 
@@ -30,14 +32,47 @@ For complete _treepplr_ documentation, see [treepplr](https://treeppl.org/treepp
 
 ## For Python users
 
-TreePPL can also be installed with the package _treeppl-python_. For that, got to [list of releases](https://github.com/treeppl/treeppl-python/releases) and download the wheel from the most recent release for your operating system. Then, run within Python:
+To make using TreePPL with Python convenient, you can install the bundled Python package that includes the TreePPL compiler.
+Follow the steps below to install the package.
 
-```python title="Install treepplr from Python"
-pip install name-of-file.whl
+### Download the prebuilt package
+
+<Tabs groupId="operating-systems">
+<TabItem value="linux" label="Linux">
+Download the wheel file [treeppl-0.1-py3-none-linux_x86_64.whl](https://github.com/treeppl/treeppl-python/releases/download/v0.1/treeppl-0.1-py3-none-linux_x86_64.whl).
+</TabItem>
+<TabItem value="macos" label="macOS">
+Download the wheel file [treeppl-0.1-py3-none-macosx_11_0_arm64.whl](https://github.com/treeppl/treeppl-python/releases/download/v0.1/treeppl-0.1-py3-none-macosx_11_0_arm64.whl).
+</TabItem>
+</Tabs>
+
+If you are using Windows, please install the Linux wheel via WSL (Windows Subsystem for Linux).
+
+### Install the package
+
+After downloading the wheel file, open a terminal and navigate to the directory containing it.
+Then install it using `pip`:
+
+<Tabs groupId="operating-systems">
+<TabItem value="linux" label="Linux">
+```bash
+pip install treeppl-0.1-py3-none-linux_x86_64.whl
 ```
+</TabItem>
+<TabItem value="macos" label="macOS">
+```bash
+pip install treeppl-0.1-py3-none-macosx_11_0_arm64.whl
+```
+</TabItem>
+</Tabs>
 
-For more information, check _treeppl-python_ [Github repository](https://github.com/treeppl/treeppl-python).
+### Verify the installation
 
+To confirm the installation was successful, import the package inside a Python session:
+```python
+import treeppl
+```
+If the command run without errors, TreePPL is ready to use.
 
 
 <!-- ## What is TreePPL?
