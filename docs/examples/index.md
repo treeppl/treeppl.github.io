@@ -12,3 +12,4 @@ Here is a list of example models of biological interest.
 - [Diversification models](div.md)
 - [Host repertoire evolution](host-repertoire.md)
 - [Tree inference](tree-inference.md)
+- [Abundances from metabarcoding](metabarcoding.md)
