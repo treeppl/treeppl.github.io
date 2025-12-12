@@ -2,6 +2,7 @@
 id: metabarcoding
 title: Abundances from metabarcoding
 sidebar_label: Abundances from metabarcoding
+sidebar_position: 1
 ---
 
 # Abundances from metabarcoding
