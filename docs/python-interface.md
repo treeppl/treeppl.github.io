@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Python interface
+sidebar_position: 3
 ---
 # Python interface
 

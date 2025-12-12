@@ -1,3 +1,8 @@
+---
+id: how_to_cite
+sidebar_position: 13
+---
+
 # How to cite TreePPL
 
 Please cite the [TreePPL Release Note](https://www.biorxiv.org/content/10.1101/2023.10.10.561673v2) when using TreePPL.

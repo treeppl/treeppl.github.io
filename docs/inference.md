@@ -1,3 +1,8 @@
+---
+id: inference
+sidebar_position: 9
+---
+
 # Inference methods
 
 TreePPL supports several inference methods.
