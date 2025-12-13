@@ -10,23 +10,23 @@ import TabItem from '@theme/TabItem';
 
 ## Introduction
 In this tutorial we will demonstrate how to use the Julia package [Pigeons.jl](https://pigeons.run/stable/) use parallel tempering to parallelize and improve MCMC inference in TreePPL.
-Parallel tempering is particularly powerful on combinatorial, multimodal and overparametrized posteriors, which abound in statistical phylogenetics.
+Parallel tempering is particularly powerful for combinatorial, multimodal and overparametrized posteriors, which abound in statistical phylogenetics.
 
 We will use the constant rate birth death (CRBD) model as the running example.
 
 ### What is parallel tempering and Pigeons?
 MCMC algorithms are inherently sequential algorithms, since the next iteration depends explicitly on what we are computing in the current.
 This makes it difficult to harness parallel hardware in modern high performance computers to speed up MCMC inference.
-Parallel tempering offers one solution to this problem: it executes several MCMC chains in parallel.
+Parallel tempering offers one solution to this problem by executing several communicating MCMC chains in parallel.
 All except one chain are _heated_ (tempered) which has the effect of flattening the likelihood landscape of the model and making it easier for the MCMC algorithm to move to new regions of parameter space.
 The last chain is _cold_ and corresponds to the true model, and it is from this chain one reads samples.
 To allow the cold chain to utilize the explorations of the hot chains, the chains swap parameter states every once in a while.
 
-[Pigeons.jl](https://pigeons.run/stable/) is a Julia package for performing parallel tempering (among other things).
-It implements a state-of-the-art variant of parallel tempering that uses an efficient communication scheme and adaptively sets the heating schedule.
-With Pigeons it is possible to run parallel tempering both on several cores on the same computer and across several core on a HPC cluster, for more details on the latter see the [Pigeons documentation on MPI usage](https://pigeons.run/stable/mpi/).
+[Pigeons.jl](https://pigeons.run/stable/) is a Julia package for sampling from difficult posterior distributions.
+Along with other algorithms for achieving this task, it implements a state-of-the-art variant of parallel tempering called _non-reversible parallel tempering_ that uses an efficient communication scheme and adaptively sets the heating schedule.
+It is this algorithm that we can access with TreePPL models and that we will try out in this tutorial.
+With Pigeons it is possible to run parallel tempering both on several cores on the same computer and across several machines on an HPC cluster, for more details on the latter see the [Pigeons documentation on MPI usage](https://pigeons.run/stable/mpi/).
 Compared to classical variants of parallel tempering, Pigeon's performance does not deteriorate as the number of chains grows large.
-
 
 ## Running TreePPL models with Pigeons
 
@@ -113,15 +113,13 @@ Pigeons.kill_child_processes(pt) # Kill the TreePPL processes after we are done
 ────────────────────────────────────────────────────────────────────────────
 ```
 
-In the output above we can see that Pigeons ran the TreePPL sampler for `2046` scans i.e. iterations.
-The output also gives some other useful information such as an estimate of the normalization constant of the prior distribution compared to the posterior.
+The output above gives some other useful information such as an estimate of the normalization constant of the prior distribution compared to the posterior.
 We of course also want to look at the samples from the cold chain, to do this we first need to compile the samples which are spread across several files into one file 
 ```julia
 Pigeons.tppl_compile_samples(pt, "compiled_samples.json")
 ```
-We could then analyze the samples using `treeppl-python` or `treepplr`.
-
-Since the CRBD model has very simple outputs, a single Float representing the rate parameter, we will also show a quick and dirty trace and density plot directly in Julia.
+We could then analyze the samples using `treeppl-python` or `treepplr`. 
+However, the CRBD model has very simple outputs – a single Float representing the birth rate parameter – so we will also show a quick and dirty trace and density plot directly in Julia.
 ```julia
 using MCMCChains, StatsPlots
 # Read the compiled samples file
@@ -132,3 +130,16 @@ ch = Chains(samples, [:λ])
 plot(ch)
 ```
 ![](media/CRBD-trace.png)
+
+## Further reading 
+
+Documentation for the various functions used from [Pigeons.jl](https://pigeons.run/stable/) package is available in the [Pigeons API reference](https://pigeons.run/stable/reference/).
+Note that it is also possible (and convenient) to access package documentation directly in the Julia REPL by first typing `?` and then the name of the thing you are interested in learning about, e.g. `?Pigeons.tppl_compile_model` to learn what options are available when compiling a model with Pigeons.
+
+Please browse Pigeon's documentation further to learn more about how to interpret and configure the output from Pigeons.
+Have a look in particular at the [documentation on using MPI](https://pigeons.run/stable/mpi/) if you are interested in running Pigeons in a distributed fashion.
+
+## References
+Please make sure to acknowledge the awesome work of the Pigeon's team by citing their paper if you use Pigeons in your work.
+
+Surjanovic, N., Biron-Lattes, M., Tiede, P., Syed, S., Campbell, T., & Bouchard-Côté, A. (2023). Pigeons.jl: Distributed sampling from intractable distributions. [_arXiv:2308.09769_](https://arxiv.org/abs/2308.09769).
