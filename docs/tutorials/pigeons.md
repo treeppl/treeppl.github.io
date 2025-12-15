@@ -18,9 +18,9 @@ We will use the constant rate birth death (CRBD) model as the running example.
 MCMC algorithms are inherently sequential algorithms, since the next iteration depends explicitly on what we are computing in the current.
 This makes it difficult to harness parallel hardware in modern high performance computers to speed up MCMC inference.
 Parallel tempering offers one solution to this problem by executing several communicating MCMC chains in parallel.
-All except one chain are _heated_ (tempered) which has the effect of flattening the likelihood landscape of the model and making it easier for the MCMC algorithm to move to new regions of parameter space.
-The last chain is _cold_ and corresponds to the true model, and it is from this chain one reads samples.
-To allow the cold chain to utilize the explorations of the hot chains, the chains swap parameter states every once in a while.
+These chains interpolate between the prior distribution, from which it is easy to sample and explore new regions of parameter space, and the posterior distribution, which is the distribution we want to sample from. 
+The interpolation is achieved by _heating_ (tempering) the intermediary distribution by raising the likelihood to a power (temperature) between $0$ and $1$ – at $0$ we recover the prior and at $1$ we recover the posterior.
+The goal of parallel tempering is thus to effectively move samples from prior to posterior through the intermediary temperatures, and the success hinges both on using an effective communication scheme and making a suitable choice of intermediary temperatures.
 
 [Pigeons.jl](https://pigeons.run/stable/) is a Julia package for sampling from difficult posterior distributions.
 Along with other algorithms for achieving this task, it implements a state-of-the-art variant of parallel tempering called _non-reversible parallel tempering_ that uses an efficient communication scheme and adaptively sets the heating schedule.
@@ -113,7 +113,16 @@ Pigeons.kill_child_processes(pt) # Kill the TreePPL processes after we are done
 ────────────────────────────────────────────────────────────────────────────
 ```
 
-The output above gives some other useful information such as an estimate of the normalization constant of the prior distribution compared to the posterior.
+The output above gives some other useful information such as an estimate of the log-normalization-constant $\log(Z_1 / Z_0)$ between the prior distribution and the posterior. 
+This is the model evidence in Bayesian statistics.
+An important technical detail is that this estimate is between the _constrained_ prior, i.e. the prior plus any hard constraints such as `weight 0` statements, and the posterior distribution; there are computational efficiency reasons for this.
+This means that log-normalization estimate of Pigeons compared to that of TreePPL's SMC algorithms will be different on problems with hard constraints.
+
+Another quantity of interest is the _global communication barrier_, $\Lambda$ in the output above, which measures how difficult it is to move samples from the prior to the posterior – a large $\Lambda$ means that it is difficult, a small $\Lambda$ that it is easy.
+The global communication barrier also gives a rule of thumb for how many chains are needed; you should use $2\Lambda + 1$ for the algorithm to work efficient.
+If you suspect or know that the MCMC kernel on your problem is heavily autocorrelated it can however be beneficial to use more chains than this,
+though adding more chains has diminishing returns.
+
 We of course also want to look at the samples from the cold chain, to do this we first need to compile the samples which are spread across several files into one file 
 ```julia
 Pigeons.tppl_compile_samples(pt, "compiled_samples.json")
@@ -137,7 +146,7 @@ Documentation for the various functions used from [Pigeons.jl](https://pigeons.r
 Note that it is also possible (and convenient) to access package documentation directly in the Julia REPL by first typing `?` and then the name of the thing you are interested in learning about, e.g. `?Pigeons.tppl_compile_model` to learn what options are available when compiling a model with Pigeons.
 
 Please browse Pigeon's documentation further to learn more about how to interpret and configure the output from Pigeons.
-Have a look in particular at the [documentation on using MPI](https://pigeons.run/stable/mpi/) if you are interested in running Pigeons in a distributed fashion.
+Have a look at the [documentation on using MPI](https://pigeons.run/stable/mpi/) in particular if you are interested in running Pigeons in a distributed fashion.
 
 ## References
 Please make sure to acknowledge the awesome work of the Pigeon's team by citing their paper if you use Pigeons in your work.
