@@ -115,7 +115,7 @@ Pigeons.kill_child_processes(pt) # Kill the TreePPL processes after we are done
 
 The output above gives some other useful information such as an estimate of the log-normalization-constant $\log(Z_1 / Z_0)$ between the prior distribution and the posterior. 
 This is the model evidence in Bayesian statistics.
-An important technical detail is that this estimate is between the _constrained_ prior, i.e. the prior plus any hard constraints such as `weight 0` statements, and the posterior distribution; there are computational efficiency reasons for this.
+An important technical detail is that this estimate is between the _constrained_ prior, i.e. the prior plus any hard constraints such as `weight 0` statements, and the posterior distribution; this will be updated in the future.
 This means that log-normalization estimate of Pigeons compared to that of TreePPL's SMC algorithms will be different on problems with hard constraints.
 
 Another quantity of interest is the _global communication barrier_, $\Lambda$ in the output above, which measures how difficult it is to move samples from the prior to the posterior – a large $\Lambda$ means that it is difficult, a small $\Lambda$ that it is easy.
