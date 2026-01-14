@@ -1,6 +1,6 @@
 ---
 id: dev
-sidebar_position: 7
+sidebar_position: 13
 ---
 
 # Contribute to TreePPL development
