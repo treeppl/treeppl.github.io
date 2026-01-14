@@ -2,7 +2,7 @@
 
 This repository contains the source code for the TreePPL website [https://treeppl.org](https://treeppl.org).
 
-The website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+The website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
 
 The `master` branch contains the source code for the official TreePPL website. The website is deployed through the `gh-pages` branch. Changes to the web site are committed by the TreePPL team to the `master` branch.
 
