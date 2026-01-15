@@ -50,18 +50,6 @@ const config = {
       crossorigin: 'anonymous',
     },
   ],
-  plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'getting-started',
-        path: 'getting-started',
-        routeBasePath: 'getting-started',
-        sidebarPath: require.resolve('./sidebarsGettingStarted.js'),
-        // ... other options
-      },
-    ],
-  ],
   themeConfig: {
       docs: {
         sidebar: {
@@ -77,10 +65,10 @@ const config = {
         // },
         items: [
           {
-            to: '/getting-started/getting-started',
+            to: '/docs/getting-started',
             position: 'left',
             label: 'Getting Started',
-            activeBaseRegex: `/getting-started/`
+            activeBaseRegex: '/docs/'
           },
           {
             type: 'doc',

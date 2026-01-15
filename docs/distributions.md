@@ -1,3 +1,8 @@
+---
+id: distriutions
+sidebar_position: 8
+---
+
 # Distributions
 
 ## Available distributions

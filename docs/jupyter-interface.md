@@ -1,5 +1,6 @@
 ---
 title: Jupyter interface
+sidebar_position: 4
 ---
 # Jupyter interface
 
