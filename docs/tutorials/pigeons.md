@@ -36,18 +36,18 @@ To proceed in this tutorial we will assume that you have the programming languag
 The latest version of Pigeons can then be installed by starting the Julia REPL and running
 ```julia
 import Pkg;
-Pkg.install("Pigeons")
+Pkg.add("Pigeons")
 ```
 
 If you want to plot the samples immediately in Julia you can also install the [MCMCChains](https://turinglang.org/MCMCChains.jl/stable/) and [StatsPlots](https://docs.juliaplots.org/dev/generated/statsplots/) packages by running
 ```julia
-Pkg.install("StatsPlots", "MCMCChains")
+Pkg.add(["StatsPlots", "MCMCChains"])
 ```
 
 ### Compiling and running the CRBD model
 
 We first set up the paths to the TreePPL source code for the CRBD model.
-Here we assumed that the [TreePPL repository](https:/github.com/treeppl/treeppl) is available at `./treeppl` in your working directory, please substitute this with the correct path on your machine.
+Here we assume that the [TreePPL repository](https:/github.com/treeppl/treeppl) is available at `./treeppl` in your working directory, please substitute this with the correct path on your machine.
 ```julia
 # Path to the TreePPL repository
 treeppl_path = "./treeppl"
