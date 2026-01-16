@@ -5,19 +5,19 @@ sidebar_position: 1
 
 # TreePPL Documentation
 
-If you are new to TreePPL, we recommend beginning looking at our [Getting started pages](docs/getting-started).
+If you are new to universal probabilistic programming and TreePPL, we recommend beginning by going through our [introductory tutorial](docs/tutorials/treeppl-intro).
 
 The TreePPL documentation consists of:
 
- - [Getting started](docs/getting-started), with instructions for first steps,
- - [Python interface](docs/python-interface), with Python Environment documentation,
- - [Jupyter interface](docs/jupyter-interface), with Jupyter documentation,
- - [R environment](docs/R-environment), linking to the R Environment documentation,
+ - [Installing TreePPL](docs/installing), with instructions on how to install TreePPL,
+ - [Python interface](docs/python-interface), documenting the Python interface,
+ - [Jupyter interface](docs/jupyter-interface), describing how to run TreePPL through Jupyter notebooks,
+ - [R environment](docs/R-environment), documenting the R interface,
  - [Tutorials](docs/tutorials), in which the user learns by doing something meaningful, towards some achievable goal,
  - [Language overview](docs/language-overview), which contains a basic language description,
  - [Distributions](docs/distributions), describing available distributions and related information,
  - [Inference methods](docs/inference), describing available inference techniques,
- - [Model examples](docs/examples), which illustrate key models available in TreePPL,
- - [Contribute to TreePPL development](docs/for-developers), which is documentation for the people who would like to develop the TreePPL language itself, including how to install for command-line use.
- - [How to cite](docs/how_to_cite), with background references.
+ - [Model library](docs/model-library), which contains model examples that can be used as templates,
+ - [Contribute to TreePPL development](docs/for-developers), with instructions for installing the command-line version and for contributing to the TreePPL development effort,
+ - [How to cite](docs/how_to_cite), with information on how to cite TreePPL.
 
