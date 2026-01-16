@@ -1,9 +1,11 @@
 ---
-id: redirect-coin
-title: Coin flipping example
+id: treeppl-intro
+title: Introduction to probabilistic programming in TreePPL
 
-sidebar_label: Treepplr
+sidebar_label: Introduction to probabilistic programming in TreePPL
 ---
 
-<meta http-equiv="refresh" content="0; url=https://treeppl.org/treepplr/articles/coin-example.html" />
-If you are not redirected automatically to the *treepplr* documentation, follow this [link](https://treeppl.org/treepplr/articles/coin-example.html).
+# Introduction to probabilistc programming in TreePPL
+
+This is just a placeholder for now. This tutorial will introduce you to probabilistic programming and TreePPL, starting from coin flipping and ending with CRB.
+

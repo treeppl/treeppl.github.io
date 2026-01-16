@@ -3,7 +3,7 @@ id: docs
 sidebar_position: 1
 ---
 
-# TreePPL Documentation
+# TreePPL documentation
 
 If you are new to universal probabilistic programming and TreePPL, we recommend beginning by going through our [introductory tutorial](docs/tutorials/treeppl-intro).
 

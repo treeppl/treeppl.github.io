@@ -51,9 +51,9 @@ const config = {
         // },
         items: [
           {
-            to: '/docs/getting-started',
+            to: 'docs/installing',
             position: 'left',
-            label: 'Getting Started',
+            label: 'Installing TreePPL',
             activeBaseRegex: '/docs/'
           },
           {
