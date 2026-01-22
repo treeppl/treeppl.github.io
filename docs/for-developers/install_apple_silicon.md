@@ -74,7 +74,7 @@ This installs OpenBLAS to `/opt/OpenBLAS`.
 ### Delete the cc symbolic link
 
 ```bash
-rm $(which cc)
+rm $HOMEBREW_PREFIX/bin/cc
 ```
 
 
@@ -85,7 +85,7 @@ We’ll use Opam to manage OCaml versions and packages locally.
 ### Initialize Opam and Install Dependencies
 
 ```bash
-opam init -y --bare
+opam init --bare
 ````
 
 If you get an error, try the command above again without the -y option, then continue. 
