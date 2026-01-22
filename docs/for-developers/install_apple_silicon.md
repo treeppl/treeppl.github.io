@@ -86,6 +86,11 @@ We’ll use Opam to manage OCaml versions and packages locally.
 
 ```bash
 opam init -y --bare
+````
+
+If you get an error, try the command above again without the -y option, then continue. 
+
+```bash
 opam update
 opam switch create treeppl-ocaml 5.3.0
 eval $(opam env --switch=treeppl-ocaml)
