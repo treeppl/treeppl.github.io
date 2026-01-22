@@ -5,6 +5,9 @@ const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+
 const config = {
   title: 'TreePPL',
   tagline: 'A Universal Probabilistic Programming Language for Phylogenetics and Evolutionary Biology',
@@ -28,6 +31,8 @@ const config = {
           path: 'docs', // Main documentation
           sidebarPath: './sidebars.js',
           routeBasePath: 'docs', // This makes docs appear at /docs/
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: false,
         theme: {
@@ -35,6 +40,15 @@ const config = {
         },
       },
     ],
+  ],
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
   ],
   themeConfig: {
       docs: {
@@ -129,7 +143,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['bash']
+        additionalLanguages: ['bash', 'julia']
       },
     },
 };
