@@ -1,11 +1,11 @@
 ---
-id: getting-started
+id: installing
 sidebar_position: 2
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Getting started with TreePPL
+# Installing TreePPL
 
 We have developed R and Python interfaces to facilitate installation, data preparation, program compilation and execution, post-processing, and visualization of inference results. We strive to provide the same functionalities in R and Python, but there might be small differences between the two interfaces because the project is under active development.
 

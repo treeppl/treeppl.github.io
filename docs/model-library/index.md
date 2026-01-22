@@ -3,7 +3,7 @@ id: models
 sidebar_position: 10
 ---
 
-# Model examples
+# Model library
 
 A library of models has been created as a part of TreePPL, see the `models` directory.  
 
