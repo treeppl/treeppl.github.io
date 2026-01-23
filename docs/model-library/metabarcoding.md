@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Abundances from metabarcoding
 
-# Basic model
+## Basic model
 
   - **Model file:** `models/metabarcoding/optmodel.tppl`
 
