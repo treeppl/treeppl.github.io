@@ -11,22 +11,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install npm
-        run: npm install
-
-      - name: Build static site
-        run: npm run build
-
-      - name: Check for broken links
+      - name: Check for broken links in docs
         uses: JustinBeckwith/linkinator-action@v1
         with:
-          paths: 'build/' 
-          recurse: true
-          # 
-          # linksToSkip: 'https://linkedin.com'
+          paths: 'docs/**/*.md' 
+          markdown: true
+          # There is crawler checking on some DOI sites, so lets skip them
+          linksToSkip: "https://doi.org*" 
