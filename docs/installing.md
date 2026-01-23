@@ -9,11 +9,11 @@ import TabItem from '@theme/TabItem';
 
 We have developed R and Python interfaces to facilitate installation, data preparation, program compilation and execution, post-processing, and visualization of inference results. We strive to provide the same functionalities in R and Python, but there might be small differences between the two interfaces because the project is under active development.
 
-If you want to contribute to TreePPL development, see [Instructions for developers](/docs/for-developers/). If you encounter problems following the instructions below, see our [troubleshooting guide](/docs/troubleshooting).
+If you want to contribute to TreePPL development, see [Instructions for developers](./for-developers/index.md). If you encounter problems following the instructions below, see our [troubleshooting guide](./troubleshooting.md).
 
 :::warning
 
-We currently support Linux and MacOS only. For Windows users there are two options: use a virtual machine/server/cluster or use TreePPL with _WSL_ (see [Windows installation instructions](/docs/for-developers/install_windows)).
+We currently support Linux and MacOS only. For Windows users there are two options: use a virtual machine/server/cluster or use TreePPL with _WSL_ (see [Windows installation instructions](./for-developers/install_windows.md)).
 
 :::
 
