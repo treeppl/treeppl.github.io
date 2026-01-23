@@ -18,6 +18,7 @@ The TreePPL documentation consists of:
  - [Distributions](docs/distributions), describing available distributions and related information,
  - [Inference methods](docs/inference), describing available inference techniques,
  - [Model library](docs/model-library), which contains model examples that can be used as templates,
+ - [Troubleshooting](docs/troubleshooting), describing solutions to problems you may encounter when installing or running TreePPL,
  - [Contribute to TreePPL development](docs/for-developers), with instructions for installing the command-line version and for contributing to the TreePPL development effort,
  - [How to cite](docs/how_to_cite), with information on how to cite TreePPL.
 
