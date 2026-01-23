@@ -19,8 +19,8 @@ const config = {
   deploymentBranch: 'gh-pages',
   // TODO We should eventually fix broken links and throw if any are found
   // onBrokenLinks: 'throw',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
 
   presets: [
