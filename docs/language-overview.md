@@ -75,13 +75,14 @@ when more text is needed */</code></td></tr>
 - The <code>return</code> statement may appear within a <code>for</code> or an <code>if</code>.
 - The only effects that a function can have are changing the likelihood, printing things, and returning an output.
 - Looping allows for limited side-effects.
+- Unlike some other languages, the curly braces are mandatory in if statements (the parentheses around the condition are not).
 
 ## Working with scalar data
 
 <div className="language-table">
 <table>
 <tr><th>Feature</th><th>Example</th></tr>
-<tr><td>The basic datatypes are integer, real, boolean, and string</td><td><code>42</code> (integer), <code>3.14</code> (real), <code>true</code> or <code>false</code> (boolean), <code>"hello"</code> (string)</td></tr>
+<tr><td>The basic datatypes are integer, real, boolean, and string</td><td><code>42</code> (Int), <code>3.14</code> (Real), <code>true</code> or <code>false</code> (Bool), <code>"hello"</code> (String)</td></tr>
 <tr><td>Arithmetic on numbers</td><td><code>2.0 + 3.0</code>,  <code>2.0 - 3.0</code>,  <code>2.0 * 3.0</code>,  <code>2.0 / 3.0</code></td></tr>
 <tr><td>Comparisons (return booleans)</td><td><code>2.0 &lt; 3.0</code>, <code>2.0 &lt;= 3.0</code>, <code>2.0 == 3.0</code>, <code>2.0 &gt;= 3.0</code>, <code>2.0 &gt; 3.0</code></td></tr>
 <tr><td>Boolean logic, AND (true if both are true)</td><td><code>a &amp;&amp; b</code></td></tr>
@@ -107,7 +108,7 @@ when more text is needed */</code></td></tr>
 </table>
 </div>
 
-- The basic datatypes are integer, real, boolean, and string. Each of them can be converted to a sequence by <code>[]</code>.
+- The basic datatypes are integer (Int), real (Real), boolean (Bool), and string (String). Each of them can be converted to a sequence by <code>[]</code>. For instance, <code>Int[]</code> for a sequence of integers.
 - It is not possible to change individual elements. For example: <code>let testSeq[1] = x;</code> <em>// compiler error!</em>
 
 ## Probabilistic programming
