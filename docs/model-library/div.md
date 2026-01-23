@@ -5,7 +5,7 @@ sidebar_label: Diversification models
 ---
 # Diversification models
 
-## Constant rate birth-death
+# Constant rate birth-death
 
   - **Model file:** `models/phylo/crbd.tppl`
 
@@ -13,7 +13,7 @@ sidebar_label: Diversification models
 
   - **Brief info:** The model simulates the constant rate birth-death process over a phylogenetic tree. The speciation rate is returned.
 
-## ClaDS
+# ClaDS
 
   - **Model file:** `models/phylo/clads.tppl`
 

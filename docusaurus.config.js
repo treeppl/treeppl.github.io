@@ -17,8 +17,6 @@ const config = {
   organizationName: 'treeppl',
   trailingSlash: false,
   deploymentBranch: 'gh-pages',
-  // TODO We should eventually fix broken links and throw if any are found
-  // onBrokenLinks: 'throw',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',

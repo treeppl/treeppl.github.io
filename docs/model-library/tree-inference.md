@@ -6,7 +6,7 @@ sidebar_label: Tree inference models
 
 # Tree inference models
 
-## Jukes-Cantor
+# Jukes-Cantor
 
   - **Model files:** `models/phylo/tree_inference.tppl`, `models/phylo/tree_inference_pruning.tppl`, `models/phylo/tree_inference_scaled.tppl`
 
@@ -14,7 +14,7 @@ sidebar_label: Tree inference models
 
   - **Brief info:** The model version `tree_inference.tppl` is a simple backwards tree reconstruction based on aligned DNA sequence data (converted to integers) as input, and using the Jukes-Cantor model of nucleotide substitution. There are also other and more computationally efficient model versions:  `tree_inference_pruning.tppl` using hard-coded pruning (Felsenstein's pruning algorith) and `tree_inference_scaled.tppl` with pruning and a scaled approach to the messages. Use the scaled version for efficient inference on larger datasets.
 
-## GTR
+# GTR
   - **Model file:** `models/phylo/tree_inference_pruning_gtr.tppl`
 
   - **Example input data:** `models/phylo/tree_inference.json`
