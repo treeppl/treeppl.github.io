@@ -22,7 +22,14 @@ Then run command
 $ npm install
 ```
 
-to install all dependent packages (including the Docusaurus libraries).
+to install all dependent packages (including the Docusaurus libraries) and 
+
+```
+$ npm run pull-treeppl-models
+```
+
+to pull model descriptions from TreePPL repository. 
+This last command can be done each time you want to update model descriptions.
 
 ### Local Development
 
