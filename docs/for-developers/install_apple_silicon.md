@@ -34,9 +34,24 @@ Next, install the necessary packages:
 brew install gcc opam wget
 ```
 
+### Set GCC as the Default cc Compiler for OpenBLAS installation
+If GCC is not set as your default cc compiler, create a symlink to ensure it's used:
+
+```bash
+# Create a symbolic link to use GCC as the default cc compiler
+# Note: Adjust the GCC version if different (e.g., gcc-12)
+cd $HOMEBREW_PREFIX/bin && ln -s gcc-12 cc
+```
+
+Verify: After this, check that cc points to the correct compiler:
+```bash
+which cc
+```
+Open a new terminal window for the changes to take effect.
+
+
 Notes for existing TreePPL users:
 
-- We no longer require `gcc` as the default compiler. If you have manually linked `cc` to `gcc`, please remove the symlink.
 - If OpenBLAS was previously installed via Homebrew, uninstall it before continuing:
   
   ```bash
@@ -48,13 +63,20 @@ Notes for existing TreePPL users:
 Download and install OpenBLAS manually:
 
 ```bash
-wget https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.29/OpenBLAS-0.3.29.zip
-unzip OpenBLAS-0.3.29.zip
-cd OpenBLAS-0.3.29
+wget https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.31/OpenBLAS-0.3.31.zip
+unzip OpenBLAS-0.3.31.zip
+cd OpenBLAS-0.3.31
 make
 sudo make install
 ```
 This installs OpenBLAS to `/opt/OpenBLAS`.
+
+### Delete the cc symbolic link
+
+```bash
+rm $HOMEBREW_PREFIX/bin/cc
+```
+
 
 ## 2. Installing OCaml, Miking, and TreePPL (local user installation)
 
@@ -63,7 +85,12 @@ We’ll use Opam to manage OCaml versions and packages locally.
 ### Initialize Opam and Install Dependencies
 
 ```bash
-opam init -y --bare
+opam init --bare
+````
+
+If you get an error, try the command above again without the -y option, then continue. 
+
+```bash
 opam update
 opam switch create treeppl-ocaml 5.3.0
 eval $(opam env --switch=treeppl-ocaml)
@@ -95,6 +122,7 @@ These commands will clone the repositories and install the tools locally. Run th
 ```bash
 git clone https://github.com/treeppl/miking.git
 cd miking
+make clean
 make
 make install
 cd ..
@@ -103,6 +131,7 @@ cd ..
 ```bash
 git clone https://github.com/treeppl/miking-dppl.git
 cd miking-dppl
+make clean
 make
 make install
 cd ..
@@ -111,6 +140,7 @@ cd ..
 ```bash
 git clone https://github.com/treeppl/treeppl.git
 cd treeppl
+make clean
 make
 make install
 cd ..

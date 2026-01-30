@@ -28,6 +28,8 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install dependencies
         run: "npm install"
+      - name: Pull models from TreePPL repo
+        run: "npm run pull-treeppl-models"
       - name: Build with Docusaurus
         run: "npm run build"
       - name: Upload artifact
