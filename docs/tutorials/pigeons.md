@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 In this tutorial we will demonstrate how to use the Julia package [Pigeons.jl](https://pigeons.run/stable/) to parallelize and improve MCMC inference in TreePPL with parallel tempering.
 Parallel tempering is particularly powerful for combinatorial, multimodal and overparametrized posteriors, which abound in statistical phylogenetics.
 
-We will use the [constant rate birth-death](../examples/div.md#constant-rate-birth-death) (CRBD) model as the running example.
+We will use the [constant rate birth-death](../model-library/div.md#constant-rate-birth-death) (CRBD) model as the running example.
 
 ### What is parallel tempering and Pigeons?
 MCMC algorithms are inherently sequential algorithms, since the next iteration depends explicitly on what we are computing in the current.

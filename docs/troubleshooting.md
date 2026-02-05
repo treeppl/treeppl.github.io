@@ -5,9 +5,9 @@ sidebar_position: 11
 
 # Troubleshooting
 
-Here we collect a few tips on how to solve problems you may encounter when installing or running TreePPL. If you cannout solve your problem using any of the tips listed here, please open an issue on TreePPL's [github repo](https://https://github.com/treeppl/treeppl).
+Here we collect a few tips on how to solve problems you may encounter when installing or running TreePPL. If you cannout solve your problem using any of the tips listed here, please open an issue on TreePPL's [github repo](https://github.com/treeppl/treeppl).
 If you find errors or have suggestions for improvement in the documentation, report it to the [web site repo](https://github.com/treeppl/treeppl.github.io).
-You can also contribute to addressing the issue(s) yourself.See instructions [here](for-developers).
+You can also contribute to addressing the issue(s) yourself.See instructions [here](for-developers/index.md).
 
 ## Installation
 
