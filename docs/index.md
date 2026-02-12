@@ -12,7 +12,7 @@ The TreePPL documentation consists of:
  - [Installing TreePPL](./installing.md), with instructions on how to install TreePPL,
  - [Python interface](./python-interface.md), documenting the Python interface,
  - [Jupyter interface](./jupyter-interface.md), describing how to work with TreePPL in Jupyter notebooks,
- - [R interface](./R-interface/index.md), documenting the R interface,
+ - [R interface](./r-interface.md), documenting the R interface,
  - [Tutorials](./tutorials/index.md), in which the user learns by doing something meaningful, towards some achievable goal,
  - [Language overview](./language-overview.md), which contains a basic language description,
  - [Distributions](./distributions.md), describing available distributions and related information,
