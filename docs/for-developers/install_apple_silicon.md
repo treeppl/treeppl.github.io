@@ -40,7 +40,7 @@ If GCC is not set as your default cc compiler, create a symlink to ensure it's u
 ```bash
 # Create a symbolic link to use GCC as the default cc compiler
 # Note: Adjust the GCC version if different (e.g., gcc-12)
-cd $HOMEBREW_PREFIX/bin && ln -s gcc-12 cc
+cd $HOMEBREW_PREFIX/bin && ln -s gcc-15 cc
 ```
 
 Verify: After this, check that cc points to the correct compiler:
