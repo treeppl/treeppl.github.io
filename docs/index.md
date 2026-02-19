@@ -20,5 +20,5 @@ The TreePPL documentation consists of:
  - [Model library](./model-library/index.md), which contains model examples that can be used as templates,
  - [Troubleshooting](./troubleshooting.md), describing solutions to problems you may encounter when installing or running TreePPL,
  - [Contribute to TreePPL development](./for-developers/index.md), with instructions for installing the command-line version and for contributing to the TreePPL development effort,
- - [Changelog](./changelog.md), for the all project, giving update about the new feature available for users,
+ - [Changelog](./changelog.md), listing important bug fixes, new features and official releases,
  - [How to cite](./how_to_cite.md), with information on how to cite TreePPL.
