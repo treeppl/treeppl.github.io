@@ -86,17 +86,13 @@ We’ll use Opam to manage OCaml versions and packages locally.
 
 ```bash
 opam init --bare
-````
-
-If you get an error, try the command above again without the -y option, then continue. 
-
-```bash
 opam update
 opam switch create treeppl-ocaml 5.3.0
 eval $(opam env --switch=treeppl-ocaml)
 export PKG_CONFIG_PATH="/opt/OpenBLAS/lib/pkgconfig:$PKG_CONFIG_PATH"
 opam install -y --no-depexts dune ocamlfind linenoise owl menhir
 ```
+If you get an error, try the command above again without the -y option, then continue. 
 
 Opam supports multiple OCaml environments via switches. TreePPL expects the *treeppl-ocaml* switch to be active:
 
