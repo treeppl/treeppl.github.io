@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- New flag ```--timeout``` for ```smc-apf``` method  (see ```tpplc --help``` for details)
 - New flag ```--infer-time``` (see ```tpplc --help``` for details)
 - Add a changelog to the webside
 
