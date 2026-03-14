@@ -14,6 +14,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## v0.3
+
+### Added
+
 - New flag ```--infer-time``` (see ```tpplc --help``` for details)
 - Add a changelog to the webside
 
