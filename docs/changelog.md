@@ -19,10 +19,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- The `debug` statement now accepts multiple arguments
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- Using `debug` to print strings no longer crashes
 
 ### Security
