@@ -43,6 +43,9 @@
 
   font-family: DIN, sans-serif;
 
+  --ifm-navbar-background-color: #7a7455;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: rgba(255, 255, 255, 0.75);
 }
 
 [data-theme='dark'] {
