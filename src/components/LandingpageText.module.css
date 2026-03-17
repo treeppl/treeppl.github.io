@@ -5,6 +5,18 @@
   margin-top: 0;
 }
 
+:global([data-theme='dark']) .Tagline {
+  color: #ffffff;
+}
+
+:global([data-theme='dark']) .FeatureTitle {
+  color: #ffffff;
+}
+
+:global([data-theme='dark']) .FeatureDesc {
+  color: #ffffff;
+}
+
 .FeatureBox {
   border-radius: 10px;
   padding: 0 1.5rem 1.2rem 1.5rem;
