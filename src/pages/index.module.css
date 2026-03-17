@@ -4,22 +4,29 @@
  */
 
 .heroBanner {
-  padding: 7.5rem 0;
+  padding: 6rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
   background-image: url("/img/forrest.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   background-color: transparent;
-  color: rgb(8, 8, 8);
+  color: white;
   font-weight: normal;
-  /* text-shadow: 1px 1px 4px black, -1px -1px 4px black, 1px -1px 4px black, -1px 1px 4px black; */
+}
+
+.heroBanner :global(.container) {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+  padding: 2rem 3rem;
+  display: inline-block;
 }
 
 @media screen and (max-width: 966px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 1.6rem;
   }
 }
 
