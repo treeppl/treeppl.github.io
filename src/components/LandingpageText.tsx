@@ -61,22 +61,24 @@ const LandingpageText: React.FC = () => {
     <div className={styles.Content}>
       <div className={styles.TwoColumnLayout}>
         <div className={styles.TextColumn}>
-          <h3 className={styles.Tagline}>Why TreePPL?</h3>
-          <div className={styles.FeatureItem}>
-            <h4 className={styles.FeatureTitle}>Flexible modeling</h4>
-            <p className={styles.FeatureDesc}>Express any model of interest using a powerful programming language</p>
-          </div>
-          <div className={styles.FeatureItem}>
-            <h4 className={styles.FeatureTitle}>Easy-to-use interfaces</h4>
-            <p className={styles.FeatureDesc}>Import data and analyze results using R or Python interfaces with Jupyter support</p>
-          </div>
-          <div className={styles.FeatureItem}>
-            <h4 className={styles.FeatureTitle}>Powerful inference</h4>
-            <p className={styles.FeatureDesc}>Select from a range of built-in strategies or develop your own</p>
-          </div>
-          <div className={styles.FeatureItem}>
-            <h4 className={styles.FeatureTitle}>Extensive libraries</h4>
-            <p className={styles.FeatureDesc}>Develop models faster using the code and model libraries</p>
+          <div className={styles.FeatureBox}>
+            <h3 className={styles.Tagline}>Why TreePPL?</h3>
+            <div className={styles.FeatureItem}>
+              <h4 className={styles.FeatureTitle}>Flexible modeling</h4>
+              <p className={styles.FeatureDesc}>Express any model of interest using a powerful programming language</p>
+            </div>
+            <div className={styles.FeatureItem}>
+              <h4 className={styles.FeatureTitle}>Easy-to-use interfaces</h4>
+              <p className={styles.FeatureDesc}>Import data and analyze results using R or Python interfaces with Jupyter support</p>
+            </div>
+            <div className={styles.FeatureItem}>
+              <h4 className={styles.FeatureTitle}>Powerful inference</h4>
+              <p className={styles.FeatureDesc}>Select from a range of built-in strategies or develop your own</p>
+            </div>
+            <div className={styles.FeatureItem}>
+              <h4 className={styles.FeatureTitle}>Extensive libraries</h4>
+              <p className={styles.FeatureDesc}>Develop models faster using the code and model libraries</p>
+            </div>
           </div>
         </div>
         <div className={styles.CodeColumn}>

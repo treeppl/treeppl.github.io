@@ -1,22 +1,31 @@
 .Tagline {
   font-size: var(--ifm-font-size-28);
-  color: var(--ifm-color-text-dark);
+  color: var(--ifm-color-primary-darkest);
   font-weight: bold;
+}
+
+.FeatureBox {
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
 }
 
 .FeatureItem {
   margin-bottom: 1.4rem;
 }
 
+.FeatureItem:last-child {
+  margin-bottom: 0;
+}
+
 .FeatureTitle {
   font-size: var(--ifm-font-size-20);
-  color: var(--ifm-color-text-dark);
+  color: var(--ifm-color-primary-darkest);
   font-weight: bold;
   margin-bottom: 0.2rem;
 }
 
 .FeatureDesc {
-  font-size: var(--ifm-font-size-18);
+  font-size: var(--ifm-font-size-16);
   color: var(--ifm-color-text-light);
   margin: 0;
 }
@@ -25,7 +34,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 95%;
+  width: 98%;
   max-width: var(--ifm-container-width);
   margin: 0 auto;
   padding: 2.4rem 0 8rem 0;
@@ -35,7 +44,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 3rem;
+  gap: 1.5rem;
   width: 100%;
   max-width: 1200px;
 }
