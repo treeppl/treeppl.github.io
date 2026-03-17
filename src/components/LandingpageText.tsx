@@ -61,16 +61,23 @@ const LandingpageText: React.FC = () => {
     <div className={styles.Content}>
       <div className={styles.TwoColumnLayout}>
         <div className={styles.TextColumn}>
-          <h3 className={styles.Tagline}>Why choose TreePPL?</h3>
-          <h4 className={styles.Description}>
-            TreePPL expresses models as computer programs that generate simulations based on input data. Specialized inference machinery then estimate posterior probability distributions for the program.
-          </h4>
-          <h4 className={styles.DescriptionBold}>
-            This approach lets users focus on model description while getting inference automatically.
-          </h4>
-          <h4 className={styles.Description}>
-            The modeling language is designed to feel familiar to R and Python users and employs a functional programming style that works well with generic inference algorithms. Users can conveniently compile and run model programs from Python or R environments, which handle pre-processing, data input, inference control, and output processing.
-          </h4>
+          <h3 className={styles.Tagline}>Why TreePPL?</h3>
+          <div className={styles.FeatureItem}>
+            <h4 className={styles.FeatureTitle}>Flexible modeling</h4>
+            <p className={styles.FeatureDesc}>Express any model of interest using a powerful programming language</p>
+          </div>
+          <div className={styles.FeatureItem}>
+            <h4 className={styles.FeatureTitle}>Easy-to-use interfaces</h4>
+            <p className={styles.FeatureDesc}>Import data and analyze results using R or Python interfaces with Jupyter support</p>
+          </div>
+          <div className={styles.FeatureItem}>
+            <h4 className={styles.FeatureTitle}>Powerful inference</h4>
+            <p className={styles.FeatureDesc}>Select from a range of built-in strategies or develop your own</p>
+          </div>
+          <div className={styles.FeatureItem}>
+            <h4 className={styles.FeatureTitle}>Extensive libraries</h4>
+            <p className={styles.FeatureDesc}>Develop models faster using the code and model libraries</p>
+          </div>
         </div>
         <div className={styles.CodeColumn}>
           <pre className={styles.CodeBlock}>

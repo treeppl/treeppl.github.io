@@ -4,18 +4,21 @@
   font-weight: bold;
 }
 
-.Description {
-  font-size: var(--ifm-font-size-20);
-  color: var(--ifm-color-text-light);
-  padding: 1rem 0;
-  font-weight: normal;
+.FeatureItem {
+  margin-bottom: 1.4rem;
 }
 
-.DescriptionBold {
+.FeatureTitle {
   font-size: var(--ifm-font-size-20);
-  color: var(--ifm-color-text-light);
-  padding: 1rem 0;
+  color: var(--ifm-color-text-dark);
   font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.FeatureDesc {
+  font-size: var(--ifm-font-size-18);
+  color: var(--ifm-color-text-light);
+  margin: 0;
 }
 
 .Content {
