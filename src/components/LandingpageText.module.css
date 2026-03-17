@@ -28,13 +28,58 @@
   padding: 8rem 0;
 }
 
-.HeaderContainer {
+.TwoColumnLayout {
   display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: left;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
   max-width: 1200px;
 }
 
+.TextColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.CodeColumn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CodeBlock {
+  background: #1e1e2e;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #cdd6f4;
+  overflow-x: auto;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.keyword {
+  color: #89b4fa;
+  font-weight: bold;
+}
+
+.type {
+  color: #a6e3a1;
+  font-weight: bold;
+}
+
+.distribution {
+  color: #f9e2af;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 966px) {
+  .TwoColumnLayout {
+    flex-direction: column;
+  }
+}
