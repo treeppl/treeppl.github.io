@@ -10,7 +10,7 @@ import rehypeKatex from 'rehype-katex';
 
 const config = {
   title: 'TreePPL',
-  tagline: 'A Universal Probabilistic Programming Language for Phylogenetics and Evolutionary Biology',
+  tagline: 'Universal Probabilistic Programming for Phylogenetics',
   url: 'http://treeppl.org/',
   baseUrl: '/',
   projectName: 'treeppl.github.io',
