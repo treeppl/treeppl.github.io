@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Moved the functions `exp`, `log`, `sqrt`, `minInt`, `maxInt`, `floor`, `ceil`, `round` from the `standard.tppl` library file to `math.tppl`.
+- Added import of `math.tppl` where needed to example model files.
 
 ### Deprecated
 
