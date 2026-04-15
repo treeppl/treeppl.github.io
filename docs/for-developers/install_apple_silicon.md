@@ -41,7 +41,6 @@ Finally, set some environment variables needed when compiling owl:
 ```bash
 export OWL_LDFLAGS="-L/opt/homebrew/opt/libomp/lib -lomp"
 export OWL_CPPFLAGS="-Xpreprocessor -fopenmp"
-export SDKROOT="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
 ```
 
 
@@ -82,7 +81,7 @@ export MCORE_LIBS=stdlib="$HOME/.local/lib/mcore/stdlib":coreppl="$HOME/.local/s
 These commands will clone the repositories and install the tools locally. Run them from your desired directory:
 
 ```bash
-git clone https://github.com/treeppl/miking.git
+git clone https://github.com/miking-lang/miking.git
 cd miking
 make clean
 make
@@ -91,7 +90,7 @@ cd ..
 ```
 
 ```bash
-git clone https://github.com/treeppl/miking-dppl.git
+git clone https://github.com/miking-lang/miking-dppl.git
 cd miking-dppl
 make clean
 make
@@ -126,7 +125,7 @@ Compile and run the coin model:
 
 ```bash
 tpplc ~/.local/src/treeppl/models/lang/coin.tppl --output coin
-./coin ~/.local/src/treeppl/models/lang/coin.json
+./coin ~/.local/src/treeppl/models/lang/data/testdata_coin.json
 ```
 
 You should see a stream of JSON-formatted samples.
