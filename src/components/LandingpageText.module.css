@@ -1,40 +1,110 @@
 .Tagline {
   font-size: var(--ifm-font-size-28);
-  color: var(--ifm-color-text-dark);
+  color: #3d5c45;
   font-weight: bold;
+  margin-top: 0;
 }
 
-.Description {
-  font-size: var(--ifm-font-size-20);
-  color: var(--ifm-color-text-light);
-  padding: 1rem 0;
-  font-weight: normal;
+:global([data-theme='dark']) .Tagline {
+  color: #ffffff;
 }
 
-.DescriptionBold {
+:global([data-theme='dark']) .FeatureTitle {
+  color: #ffffff;
+}
+
+:global([data-theme='dark']) .FeatureDesc {
+  color: #ffffff;
+}
+
+.FeatureBox {
+  border-radius: 10px;
+  padding: 0 1.5rem 1.2rem 1.5rem;
+}
+
+.FeatureItem {
+  margin-bottom: 1.4rem;
+}
+
+.FeatureItem:last-child {
+  margin-bottom: 0;
+}
+
+.FeatureTitle {
   font-size: var(--ifm-font-size-20);
-  color: var(--ifm-color-text-light);
-  padding: 1rem 0;
+  color: #3d5c45;
   font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.FeatureDesc {
+  font-size: var(--ifm-font-size-16);
+  color: var(--ifm-color-text-light);
+  margin: 0;
 }
 
 .Content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 95%;
+  width: 98%;
   max-width: var(--ifm-container-width);
   margin: 0 auto;
-  padding: 8rem 0;
+  padding: 2.4rem 0 1.6rem 0;
 }
 
-.HeaderContainer {
+.TwoColumnLayout {
   display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: left;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
   max-width: 1200px;
 }
 
+.TextColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.CodeColumn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CodeBlock {
+  background: #1e1e2e;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #cdd6f4;
+  overflow-x: auto;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.keyword {
+  color: #89b4fa;
+  font-weight: bold;
+}
+
+.type {
+  color: #a6e3a1;
+  font-weight: bold;
+}
+
+.distribution {
+  color: #f9e2af;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 966px) {
+  .TwoColumnLayout {
+    flex-direction: column;
+  }
+}

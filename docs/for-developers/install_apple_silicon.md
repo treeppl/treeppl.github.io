@@ -13,6 +13,8 @@ Install Apple's Command Line Tools (if not already installed):
 xcode-select --install
 ```
 
+If they are already installed, a message will inform you about this.
+
 ### Homebrew and Required Packages
 
 If you don’t have [Homebrew](https://brew.sh/) installed, install it using:
@@ -31,50 +33,14 @@ brew upgrade
 Next, install the necessary packages:
 
 ```bash
-brew install gcc opam wget
+brew install opam openblas libomp fftw
 ```
 
-### Set GCC as the Default cc Compiler for OpenBLAS installation
-If GCC is not set as your default cc compiler, create a symlink to ensure it's used:
+Finally, set some environment variables needed when compiling owl:
 
 ```bash
-# Create a symbolic link to use GCC as the default cc compiler
-# Note: Adjust the GCC version if different (e.g., gcc-12)
-cd $HOMEBREW_PREFIX/bin && ln -s gcc-15 cc
-```
-
-Verify: After this, check that cc points to the correct compiler:
-```bash
-which cc
-```
-Open a new terminal window for the changes to take effect.
-
-
-Notes for existing TreePPL users:
-
-- If OpenBLAS was previously installed via Homebrew, uninstall it before continuing:
-  
-  ```bash
-  brew uninstall openblas
-  ```
-
-### Installing OpenBLAS from Source
-
-Download and install OpenBLAS manually:
-
-```bash
-wget https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.31/OpenBLAS-0.3.31.zip
-unzip OpenBLAS-0.3.31.zip
-cd OpenBLAS-0.3.31
-make
-sudo make install
-```
-This installs OpenBLAS to `/opt/OpenBLAS`.
-
-### Delete the cc symbolic link
-
-```bash
-rm $HOMEBREW_PREFIX/bin/cc
+export OWL_LDFLAGS="-L/opt/homebrew/opt/libomp/lib -lomp"
+export OWL_CPPFLAGS="-Xpreprocessor -fopenmp"
 ```
 
 
@@ -89,18 +55,17 @@ opam init --bare
 opam update
 opam switch create treeppl-ocaml 5.3.0
 eval $(opam env --switch=treeppl-ocaml)
-export PKG_CONFIG_PATH="/opt/OpenBLAS/lib/pkgconfig:$PKG_CONFIG_PATH"
-opam install -y --no-depexts dune ocamlfind linenoise owl menhir
+opam install dune ocamlfind linenoise menhir owl
 ```
-If you get an error, try the command above again without the -y option, then continue. 
 
-Opam supports multiple OCaml environments via switches. TreePPL expects the *treeppl-ocaml* switch to be active:
+Opam supports multiple OCaml environments via switches; the number refers to the OCaml version. TreePPL expects the *treeppl-ocaml* switch to be active:
 
 ```bash
 eval $(opam env --switch=treeppl-ocaml)
 ```
 
-To automatically activate it when opening a new shell, add the above line to your `~/.zshrc`.
+To automatically activate it when opening a new shell, add the above line to your `~/.zshrc`. We are basing the switch on version 5.3.0 of OCaml as this is the latest version we have tested thoroughly but we are not aware of any issues with more recent versions of OCaml.
+
 
 ### Set Up Environment Variables
 
@@ -116,7 +81,7 @@ export MCORE_LIBS=stdlib="$HOME/.local/lib/mcore/stdlib":coreppl="$HOME/.local/s
 These commands will clone the repositories and install the tools locally. Run them from your desired directory:
 
 ```bash
-git clone https://github.com/treeppl/miking.git
+git clone https://github.com/miking-lang/miking.git
 cd miking
 make clean
 make
@@ -125,7 +90,7 @@ cd ..
 ```
 
 ```bash
-git clone https://github.com/treeppl/miking-dppl.git
+git clone https://github.com/miking-lang/miking-dppl.git
 cd miking-dppl
 make clean
 make
@@ -160,7 +125,7 @@ Compile and run the coin model:
 
 ```bash
 tpplc ~/.local/src/treeppl/models/lang/coin.tppl --output coin
-./coin ~/.local/src/treeppl/models/lang/coin.json
+./coin ~/.local/src/treeppl/models/lang/data/testdata_coin.json
 ```
 
 You should see a stream of JSON-formatted samples.
