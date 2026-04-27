@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- New flag ```--data-augmentation``` (see ```tpplc --help``` for details)
 - Added math functions, distribution types and functions, and tree types and functions to the library. The code is in separate library files (`math.tppl`, `distributions.tppl` and `trees.tppl`) in the `src/lib/` directory.
 - Added diversification model example for the birth-death diffusion (BDD) model, version 2 (analogous to ClaDS2).
 - Added diversification model versions with hard-coded delayed sampling.
