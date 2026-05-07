@@ -19,16 +19,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added diversification model example for the birth-death diffusion (BDD) model, version 2 (analogous to ClaDS2).
 - Added diversification model versions with hard-coded delayed sampling.
 - Added constant-rate birth-death (CRBD) model using weights based on analytical likelihood rather than simulation.
+- Python interface: Introduced `CompileArguments` and `RunArguments` classes for handling compile and run arguments. `RunArguments` can now be serialized to and deserialized from JSON files for easier reuse and reproducibility.
 
 ### Changed
 
 - Moved the functions `exp`, `log`, `sqrt`, `minInt`, `maxInt`, `floor`, `ceil`, `round` from the `standard.tppl` library file to `math.tppl`.
+- Python interface: Compile arguments now mirrors the arguments used by `tpplc` for improved consistency and alignment between interfaces.
 
 ### Deprecated
 
 ### Removed
 
 - Removed the `Tree` type from the `standard.tppl` library file. An identical type, called `ClockTree`, is now in the `trees.tppl` library file. This change allows a more convenient interface, in that a user can synonymize a local custom `Tree` type with `ClockTree`, or any other tree type in the standard library that is appropriate for the model script.
+- Jupyter interface: Removed legacy syntax highlighting support that was only compatible with older Jupyter Notebook versions.
 
 ### Fixed
 
