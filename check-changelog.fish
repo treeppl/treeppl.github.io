@@ -1,0 +1,162 @@
+#!/usr/bin/env fish
+
+# === Library stuff ===
+
+set -g repoDir (path resolve (status dirname))
+
+set -g repoNames
+set -g repoUrls
+
+set -g online yes
+
+function ensureRepo --argument-names repoName url
+    set -l dir "$repoDir/other-repositories/$repoName"
+    if not test -d $dir
+        git clone $url $dir || exit 1
+    end
+    cd $dir
+    set -qg online && begin; git pull --force || exit 1; end
+end
+
+function prsSince --argument-names repoName date
+    set -l dir "$repoDir/other-repositories/$repoName"
+    cd $dir
+    git log --since=$date --grep="[ (]#[0-9]\+\b" --format=%s\
+        | sed "s!^.*\?\(#[0-9]\+\).*!$repoName\1!"
+end
+
+function addRepo --argument-names repoName url
+    set -ag repoNames $repoName
+    set -ag repoUrls $url
+    ensureRepo $repoName $url
+end
+
+function unmentionedPRs --argument-names date
+    set -l files $argv[2..]
+
+    set -l allPRs
+    for repoName in $repoNames
+        set -a allPRs (prsSince $repoName $date)
+    end
+
+    set -l allPRs (string join \n -- $allPRs | sort | uniq)
+    set -l mentioned (grep '[a-zA-Z0-9-]\+#[0-9]\+' --only-matching --no-filename $files | sort | uniq)
+    comm -2 -3 (string join \n $allPRs | psub) (string join \n $mentioned | psub)
+end
+
+function setKV --argument-names key value
+    if not begin; echo $value | jq -Rs fromjson &>/dev/null; end
+        # NOTE(vipa, 2025-07-21): Not valid json, quote it
+        set value '"'(string join \n -- $value | jq -Rs '.')'"'
+    end
+    set -l cache $repoDir/other-repositories/cache.json
+    if test -f $cache
+        set -l result (jq -c '.["'$key'"] = '$value < $cache)
+        echo $result > $cache
+    else
+        echo '{"'$key'":'$value'}' > $cache
+    end
+end
+
+function getKV --argument-names key
+    set -l cache $repoDir/other-repositories/cache.json
+    jq -r '.["'$key'"]' < $cache | string collect
+end
+
+function getBody --argument-names pr
+    if set -gq online
+        string match --entire --regex --quiet '(?<repoName>[a-zA-Z0-9-]+)#(?<prNum>[0-9]+)' $pr
+        or begin; echo "match 1 failed" >&2; exit 1; end
+        set -l url $repoUrls[(contains --index $repoName $repoNames)]
+        or begin; echo "contains failed" >&2; exit 1; end
+        string match --entire --regex --quiet '[a-z]://(?<repo>.*?)\.git' $url
+        or begin; echo "match 2 failed" >&2; exit 1; end
+        set -l body (gh pr view --json body --jq .body --repo $repo $prNum | tr -d '\r' | jq -Rs '.')
+        setKV $pr $body
+        string collect $body
+    else
+        getKV $pr
+    end
+end
+
+set -g headings
+function collectBullets --argument-names pr
+    set -l lines (string split \n -- (getBody $pr))
+    if set -l idx (contains --index -- "## TreePPL Release Notes" $lines)
+        for line in $lines[(math $idx + 1)..]
+            switch $line
+                case "###*"
+                    set -l headingVar (string escape --style=var -- $line)
+                    if not contains $headingVar $headings
+                        set -a headings $headingVar
+                    end
+                    set -f currentHeading $headingVar
+                case "##*" "---"
+                    break
+                case "- *" "\* *"
+                    set -f addedBullet
+                    set -q currentHeading || continue
+                    set -ga $currentHeading "- ($pr) $(string match --regex --groups-only '. *(.*)' -- $line)"
+            end
+        end
+        if not set -qf addedBullet
+            echo $pr\t"(had changelog with no bullets)"
+        end
+    else
+        echo $pr
+    end
+end
+
+function showBullets
+    for heading in $headings
+        if not count $$heading >/dev/null
+            continue
+        end
+        string unescape --style=var $heading
+        string join \n -- $$heading
+        echo
+    end
+end
+
+function splitOffBullets
+    for pr in $argv
+        collectBullets $pr
+    end
+end
+
+function mkGHLinkSed --argument-names i
+    echo -- "-e"
+    echo -n "s@"
+    echo -n $repoNames[$i]"#\([0-9]\+\)@"
+    echo -n '['$repoNames[$i]'#\1]('(echo $repoUrls[$i] | sed 's/.git$//')'/pull/\1)@'
+    echo 'g'
+end
+
+function formatLinks
+    set -l cmd
+    sed (for i in (seq (count $repoNames)); mkGHLinkSed $i; end)
+end
+
+
+# === Application ===
+
+set -l startDate 2026-03-13
+
+if contains -- --offline $argv
+    set -ge online
+end
+
+set -l extraPRs (string match --invert --entire -- --offline $argv)
+
+addRepo miking https://github.com/miking-lang/miking.git
+addRepo dppl https://github.com/miking-lang/miking-dppl.git
+addRepo treeppl https://github.com/treeppl/treeppl.git
+addRepo treeppl-python https://github.com/treeppl/treeppl-python.git
+addRepo treepplr https://github.com/treeppl/treepplr.git
+
+splitOffBullets (begin; unmentionedPRs $startDate $repoDir/docs/changelog.md $repoDir/(status basename); string join \n -- $extraPRs; end) | formatLinks
+echo
+showBullets | formatLinks
+
+
+# These are to be ignored:
