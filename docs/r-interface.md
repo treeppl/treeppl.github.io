@@ -9,24 +9,24 @@ sidebar_position: 5
 `treepplr` is an interface for using the TreePPL program. All functions start
 with `tp_` to easily distinguish them from functions from other packages.
 
-The three necessary parts for doing analysis with TreePPL are: model, data and 
-inference machinery. 
+The three necessary parts for doing analysis with TreePPL are: model, data and
+inference machinery.
 
 ## Model
 
-You can choose a model in TreePPL language from our 
+You can choose a model in TreePPL language from our
 [library](https://treeppl.org/docs/model-library) or you can write your own model.
 
 To list all available models in our library, use `tp_model_library()` to retrieve
-the models within the [TreePPL github repository](https://github.com/treeppl/treeppl/tree/main/models). 
+the models within the [TreePPL github repository](https://github.com/treeppl/treeppl/tree/main/lib/models).
 
 ```r
 model_lib <- tp_model_library()
 ````
 To use one of these models you just need its name in `model_lib$model_name`.
 
-If you want to use your own custom model, you will need to write it in TreePPL 
-language and pass it to an R object that contains either the full path to the 
+If you want to use your own custom model, you will need to write it in TreePPL
+language and pass it to an R object that contains either the full path to the
 `.tppl` file containing the model, or a string with the full model.
 
 ```r
@@ -91,7 +91,7 @@ exe_path <- tp_compile(model = model_path, method = "mcmc-lightweight",
 ```
 
 
-## Running 
+## Running
 
 Now you are ready to run your analysis. All you have to do is to pass your data
 to the compiled executable and choose how many independent runs you want to do.
@@ -122,4 +122,3 @@ output_df_mcmc <- tp_parse_mcmc(output)
 
 Different models produce different outputs and thus require different post-processing.
 See the model-specific tutorials for ways to process your TreePPL output.
-
