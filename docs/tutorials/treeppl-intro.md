@@ -1,11 +1,12 @@
 ---
 id: treeppl-intro
-title: Introduction to probabilistic programming in TreePPL
+title: A Basic Tutorial to Probabilistic Programming in TreePPL
 
-sidebar_label: Introduction to probabilistic programming in TreePPL
+sidebar_label: A Basic Tutorial to Probabilistic Programming in TreePPL
 ---
 
-# Introduction to probabilistc programming in TreePPL
+The foundation of TreePPL is based on the principles of probabilistic Programming, a programmatic way of specifying Bayesian probabilistic models.
 
-This is just a placeholder for now. This tutorial will introduce you to probabilistic programming and TreePPL, starting from coin flipping and ending with CRB.
+In this section, you can find a basic tutorial on how to do modeling using probabilistic programming in TreePPL. The goal of the tutorial is to demonstrate simple probabilistic programming in TreePPL, not to give a complete view of how to do phylogenetic modeling. For the basic tutorial, please see the [following slides](http://www.treeppl.org/courses/treeppl-tutorial.pdf).
 
+As part of the tutorial, you can also find exercises in a Jupyter notebook. Please start by downloading the [exercises here](http://www.treeppl.org/courses/basic-tutorial.zip). Suggestions for solutions can also be [found here](http://www.treeppl.org/courses/basic-tutorial-solutions.zip).
