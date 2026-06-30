@@ -39,3 +39,18 @@ At the end of your session, deactivate your virtual environment using
 This will bring you back to your terminal window.
 
 
+### Installing the developer version of TreePPL on MacOS
+
+We have noticed that on MacOS systems with legacy versions of compilers and developer tools, it may be necessary to set the environment variable `SDKROOT` before installing the OCaml packages. Otherwise, problems may occurr during compilation of `owl`.
+
+To address this, proceed according to instructions but add one more flag before installing the OCaml packages. Specifically, after exporting `OWL_CPPFLAGS` and before compiling OCaml packages, add an export of the appropriate path to the developer tools on your system (should be the one given below), as indicated below.
+
+```bash
+rm $HOMEBREW_PREFIX/bin/cc
+export OWL_LDFLAGS="-L/opt/homebrew/opt/libomp/lib -lomp"
+export OWL_CPPFLAGS="-Xpreprocessor -fopenmp"
+export SDKROOT="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
+```
+
+After this, proceed according to the standard instructions.
+
