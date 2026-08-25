@@ -4,6 +4,9 @@
 # Production
 /build
 
+#Auto-generate
+/docs/model-library
+
 # Generated files
 .docusaurus
 .cache-loader
