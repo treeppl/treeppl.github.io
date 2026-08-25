@@ -6,6 +6,8 @@
 
 #Auto-generate
 /docs/model-library
+/docs/Reference
+/other-repositories
 
 # Generated files
 .docusaurus

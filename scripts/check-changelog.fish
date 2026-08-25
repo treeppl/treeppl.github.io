@@ -2,21 +2,10 @@
 
 # === Library stuff ===
 
-set -g repoDir (path resolve (status dirname))
+source (path resolve (status dirname))/repo-utils.fish
 
 set -g repoNames
 set -g repoUrls
-
-set -g online yes
-
-function ensureRepo --argument-names repoName url
-    set -l dir "$repoDir/other-repositories/$repoName"
-    if not test -d $dir
-        git clone $url $dir || exit 1
-    end
-    cd $dir
-    set -qg online && begin; git pull --force || exit 1; end
-end
 
 function prsSince --argument-names repoName date
     set -l dir "$repoDir/other-repositories/$repoName"
@@ -154,7 +143,7 @@ addRepo treeppl https://github.com/treeppl/treeppl.git
 addRepo treeppl-python https://github.com/treeppl/treeppl-python.git
 addRepo treepplr https://github.com/treeppl/treepplr.git
 
-splitOffBullets (begin; unmentionedPRs $startDate $repoDir/docs/changelog.md $repoDir/(status basename); string join \n -- $extraPRs; end) | formatLinks
+splitOffBullets (begin; unmentionedPRs $startDate $repoDir/docs/changelog.md $repoDir/scripts/(status basename); string join \n -- $extraPRs; end) | formatLinks
 echo
 showBullets | formatLinks
 

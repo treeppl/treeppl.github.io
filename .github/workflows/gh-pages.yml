@@ -28,8 +28,14 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install dependencies
         run: "npm install"
+      - name: Install fish
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fish
       - name: Pull models from TreePPL repo
-        run: "npm run pull-treeppl-models"
+        run: "npm run gen-model-docs"
+      - name: Generate reference documentation
+        run: "npm run gen-reference-docs"
       - name: Build with Docusaurus
         run: "npm run build"
       - name: Upload artifact
