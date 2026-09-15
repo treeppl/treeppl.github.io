@@ -10,18 +10,21 @@ import rehypeKatex from 'rehype-katex';
 
 const config = {
   title: 'TreePPL',
-  tagline: 'A Universal Probabilistic Programming Language for Phylogenetics and Evolutionary Biology',
+  tagline: 'Universal Probabilistic Programming for Phylogenetics',
   url: 'http://treeppl.org/',
   baseUrl: '/',
   projectName: 'treeppl.github.io',
   organizationName: 'treeppl',
   trailingSlash: false,
   deploymentBranch: 'gh-pages',
-  // TODO We should eventually fix broken links and throw if any are found
-  // onBrokenLinks: 'throw',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
 
   presets: [
     [
@@ -91,24 +94,24 @@ const config = {
       algolia: {
         // The application ID provided by Algolia
         appId: 'GMDMVF6JJU',
-  
+
         // Public API key: it is safe to commit it
         apiKey: '893a4c3bf8a2be3d557fca8a80ab4471',
-  
+
         indexName: 'treeppl',
-  
+
         // Optional: see doc section below
         contextualSearch: true,
-  
+
         // Optional: Algolia search parameters
         searchParameters: {},
-  
+
         // Optional: path for search page that enabled by default (`false` to disable it)
         searchPagePath: 'search',
-  
+
         // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
         insights: false,
-  
+
         //... other Algolia params
       },
       footer: {

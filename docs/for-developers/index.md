@@ -17,5 +17,5 @@ Choose your operating system:
 
 ## Contribute to the web site
 
-If you wish to contribute to the development of the TreePPL web site, there are detailed instructions on how to fork the TreePPL web site repo, edit the content, render the new content locally to check it out, and create a pull request in the README file in the [TreePPL web site repo](https://github.com/treeppl/treeppl/treeppl.github.io).
+If you wish to contribute to the development of the TreePPL web site, there are detailed instructions on how to fork the TreePPL web site repo, edit the content, render the new content locally to check it out, and create a pull request in the README file in the [TreePPL web site repo](https://github.com/treeppl/treeppl.github.io).
 

@@ -27,7 +27,7 @@ when more text is needed */</code></td></tr>
 <div className="language-table">
 <table>
 <tr><th>Feature</th><th>Example</th></tr>
-<tr><td>Print something (real/integer/string) to debug</td><td><code>debug(something)</code></td></tr>
+<tr><td>Print something (real/integer/string) to debug</td><td><code>debug("Example: ", 32)</code></td></tr>
 <tr><td>Printing and adding a new line</td><td><code>printLn(text);</code></td></tr>
 <tr><td>Printing without adding a new line</td><td><code>print(text);</code></td></tr>
 <tr><td>Print only an empty line</td><td><code>print("\n");</code></td></tr>
