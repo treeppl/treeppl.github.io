@@ -24,6 +24,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+## v0.5
+
+### Added
+- ([dppl#239](https://github.com/miking-lang/miking-dppl/pull/239), [treeppl#161](https://github.com/treeppl/treeppl/pull/161)) `--debug-graph-json <FILE>` to output a json representation of the graph generated when running a model compiled with `mcmc-graph`.
+- ([dppl#243](https://github.com/miking-lang/miking-dppl/pull/243), [treeppl#161](https://github.com/treeppl/treeppl/pull/161)) `--debug-idealized <FILE>` to output a pretty-printed version of the graph after the idealized transformation stage.
+- ([dppl#240](https://github.com/miking-lang/miking-dppl/pull/240), [dppl#242](https://github.com/miking-lang/miking-dppl/pull/242)) Improved the graph translation performed in `-m mcmc-graph`
+- ([dppl#245](https://github.com/miking-lang/miking-dppl/pull/245), [treeppl#163](https://github.com/treeppl/treeppl/pull/163)) Add `--max-propagations INT` to limit `smc-apf` near infinite loop (see `tpplc --help` for more details)
+- ([treeppl#165](https://github.com/treeppl/treeppl/pull/165)) A `tpplc --version` flag that prints a version number when given to a released compiler and `~git~` when given to a manually built compiler.
+- ([treeppl#169](https://github.com/treeppl/treeppl/pull/169)) Add `all` function.
+- ([treepplr#12](https://github.com/treeppl/treepplr/pull/12)) Add `tp_runtime_options`
+- ([treepplr#13](https://github.com/treeppl/treepplr/pull/13)) `tp_run(n_runs)`  to run multiple sweeps/runs
+- ([treepplr#13](https://github.com/treeppl/treepplr/pull/13)) `tp_run(n_processes)`  to run MCMC or SMC in parallel using n cores
+- ([treepplr#13](https://github.com/treeppl/treepplr/pull/13)) `tp_compile_methods()`  to find available methods
+- ([treepplr#14](https://github.com/treeppl/treepplr/pull/14)) Tim and Stenio as package authors in DESCRIPTION.
+
+### Changed
+- ([treeppl#172](https://github.com/treeppl/treeppl/pull/172)) Updated external dependencies
+- ([treepplr#12](https://github.com/treeppl/treepplr/pull/12)) Change "compiled_model" to "sampler" (temporary)
+- ([treepplr#13](https://github.com/treeppl/treepplr/pull/13)) Updated the documentation
+- ([treepplr#14](https://github.com/treeppl/treepplr/pull/14)) treepplr package installation should be done with `pak::pak` because `devtools::install_github` will soon be deprecated.
+- ([treepplr#30](https://github.com/treeppl/treepplr/pull/30)) Updated roxygen documentation for `tp_parse_smc()` and `tp_parse_mcmc()`. Changed their output objects to tidy data frames.
+- ([miking#1006](https://github.com/miking-lang/miking/pull/1006), [dppl#246](https://github.com/miking-lang/miking-dppl/pull/246), [treeppl#165](https://github.com/treeppl/treeppl/pull/165)) Rearranged `tpplc --help` output for nicer readability
+
+### Deprecated
+- ([treepplr#12](https://github.com/treeppl/treepplr/pull/12)) all references to `n_runs` have been remove
+
+### Removed
+
+### Fixed
+- ([treeppl#162](https://github.com/treeppl/treeppl/pull/162)) Matrix operations should no longer be compiled incorrectly when using `mcmc-graph`.
+- ([treeppl#166](https://github.com/treeppl/treeppl/pull/166)) Lexing errors now point at the actual problem
+- ([treeppl#172](https://github.com/treeppl/treeppl/pull/172)) Updated builds to work on MacOS 27
+- ([treepplr#12](https://github.com/treeppl/treepplr/pull/12)) Always check if tpplc is installed before calling it
+- ([treepplr#12](https://github.com/treeppl/treepplr/pull/12)) `tp_compile_options`  update for new `--help` format
+- ([treepplr#30](https://github.com/treeppl/treepplr/pull/30)) `tp_parse_smc()` and `tp_parse_mcmc()` now parse per-particle/iteration with explicit indices and (for SMC) join weights by index using `left_join(..., by = "particle")` instead of relying on positional recycling, which is the default behavior of `data.frame()` when handling vectors of different lengths.
+
+### Security
+
 ## v0.4.1
 
 ### Added
