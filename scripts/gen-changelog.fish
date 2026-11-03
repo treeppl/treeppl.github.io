@@ -38,6 +38,5 @@ for dir in $modelsDir
     test -f $changelog || continue
     cp $changelog $outDir/$name.md
     set -l description (awk '/^#/ {sub(/^#\s*/, ""); print; exit}' $changelog)
-    echo "- [$description]($name.md)" 
     echo "- [$description]($name.md)" >> $index
 end

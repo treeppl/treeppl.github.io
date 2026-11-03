@@ -13,6 +13,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
+    "gen-changelog": "./scripts/gen-changelog.fish",
     "gen-model-docs": "./scripts/gen-model-docs.fish",
     "gen-reference-docs": "./scripts/gen-reference-docs.fish"
   },
