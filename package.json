@@ -13,23 +13,24 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
+    "gen-changelog": "./scripts/gen-changelog.fish",
     "gen-model-docs": "./scripts/gen-model-docs.fish",
     "gen-reference-docs": "./scripts/gen-reference-docs.fish"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.8.1",
-    "@docusaurus/preset-classic": "^3.8.1",
+    "@docusaurus/core": "^3.10.2",
+    "@docusaurus/preset-classic": "^3.10.2",
     "@mdx-js/react": "^3.1.0",
     "clsx": "^2.1.1",
     "docusaurus-plugin-remote-content": "^4.0.0",
     "prism-react-renderer": "^2.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "rehype-katex": "^7.0.1",
-    "remark-math": "^6.0.0"
+    "rehype-katex": "^1.2.0",
+    "remark-math": "^3.0.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/module-type-aliases": "^3.10.2",
     "tsconfig": "^7.0.0",
     "typescript": "~5.2.2"
   },

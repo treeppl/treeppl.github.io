@@ -8,7 +8,7 @@ const darkCodeTheme = themes.dracula;
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
-const config = {
+export default {
   title: 'TreePPL',
   tagline: 'Universal Probabilistic Programming for Phylogenetics',
   url: 'http://treeppl.org/',
@@ -150,5 +150,3 @@ const config = {
       },
     },
 };
-
-module.exports = config;

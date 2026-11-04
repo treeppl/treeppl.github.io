@@ -5,6 +5,7 @@
 /build
 
 #Auto-generate
+/docs/changelogs
 /docs/model-library
 /docs/Reference
 /other-repositories
